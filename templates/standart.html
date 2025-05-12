@@ -1,0 +1,472 @@
+{% extends 'include/base.html' %}
+{% load static %}
+{% block title %}Образовательные стандарты - МОУ Размахнинская СОШ{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Образовательные стандарты</h1>
+
+    </div>
+</section>
+<div class="container">
+<div class="section">
+            <div class="section-header">
+           <span class="section-badge">Федеральные государственные образовательные стандарты</span>
+        </div>
+
+    <p>МОУ Размахнинская СОШ осуществляет образовательную деятельность в соответствии с федеральными государственными образовательными стандартами (ФГОС), которые представляют собой совокупность требований, обязательных при реализации основных образовательных программ.</p>
+    
+
+</div>
+
+<div class="section">
+            <div class="section-header">
+           <span class="section-badge">ФГОС по уровням образования</span>
+        </div>
+    
+    <div class="tabs-container">
+        <div class="tabs-nav">
+            <button class="tab-btn active" data-tab="elementary-standards">Начальное общее образование</button>
+            <button class="tab-btn" data-tab="basic-standards">Основное общее образование</button>
+            <button class="tab-btn" data-tab="secondary-standards">Среднее общее образование</button>
+        </div>
+        
+        <div class="tabs-content">
+            <!-- Начальное общее образование -->
+            <div class="tab-pane active" id="elementary-standards">
+                <div class="standards-card">
+                    <h3>ФГОС начального общего образования</h3>
+                    <p>В МОУ Размахнинская СОШ реализуется ФГОС начального общего образования (1-4 классы).</p>
+                    
+                    <div class="standards-info">
+                        <div class="standards-info-item">
+                            <h4>Нормативный документ</h4>
+                            <p>Приказ Министерства просвещения РФ от 31 мая 2021 г. № 286 "Об утверждении федерального государственного образовательного стандарта начального общего образования"</p>
+                            <div class="document-download">
+                                <a href="{% static 'documents/standards/fgos-noo-2021.pdf' %}" class="btn btn-outline btn-sm" download>
+                                     Скачать документ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Основные результаты освоения программы начального общего образования</h4>
+                    <div class="standards-results">
+                        <div class="standards-result-item">
+                            <h5>Личностные результаты</h5>
+                            <ul class="standards-list">
+                                <li>Формирование основ российской гражданской идентичности</li>
+                                <li>Формирование целостного взгляда на мир</li>
+                                <li>Развитие самостоятельности и личной ответственности</li>
+                                <li>Формирование эстетических потребностей, ценностей и чувств</li>
+                                <li>Развитие навыков сотрудничества со взрослыми и сверстниками</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="standards-result-item">
+                            <h5>Метапредметные результаты</h5>
+                            <ul class="standards-list">
+                                <li>Овладение способностью принимать и сохранять цели и задачи учебной деятельности</li>
+                                <li>Освоение способов решения проблем творческого и поискового характера</li>
+                                <li>Формирование умения планировать, контролировать и оценивать учебные действия</li>
+                                <li>Использование знаково-символических средств представления информации</li>
+                                <li>Активное использование речевых средств для решения коммуникативных задач</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="standards-result-item">
+                            <h5>Предметные результаты</h5>
+                            <p>Предметные результаты освоения основной образовательной программы начального общего образования с учетом специфики содержания предметных областей, включающих в себя конкретные учебные предметы.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Основное общее образование -->
+            <div class="tab-pane" id="basic-standards">
+                <div class="standards-card">
+                    <h3>ФГОС основного общего образования</h3>
+                    <p>В МОУ Размахнинская СОШ реализуется ФГОС основного общего образования (5-9 классы).</p>
+                    
+                    <div class="standards-info">
+                        <div class="standards-info-item">
+                            <h4>Нормативный документ</h4>
+                            <p>Приказ Министерства просвещения РФ от 31 мая 2021 г. № 287 "Об утверждении федерального государственного образовательного стандарта основного общего образования"</p>
+                            <div class="document-download">
+                                <a href="{% static 'documents/standards/fgos-ooo-2021.pdf' %}" class="btn btn-outline btn-sm" download>
+                                 Скачать документ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Основные результаты освоения программы основного общего образования</h4>
+                    <div class="standards-results">
+                        <div class="standards-result-item">
+                            <h5>Личностные результаты</h5>
+                            <ul class="standards-list">
+                                <li>Воспитание российской гражданской идентичности</li>
+                                <li>Формирование ответственного отношения к учению, готовности к саморазвитию</li>
+                                <li>Формирование целостного мировоззрения</li>
+                                <li>Формирование осознанного, уважительного отношения к другому человеку</li>
+                                <li>Освоение социальных норм, правил поведения, ролей и форм социальной жизни</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="standards-result-item">
+                            <h5>Метапредметные результаты</h5>
+                            <ul class="standards-list">
+                                <li>Умение самостоятельно определять цели своего обучения</li>
+                                <li>Умение самостоятельно планировать пути достижения целей</li>
+                                <li>Умение соотносить свои действия с планируемыми результатами</li>
+                                <li>Умение оценивать правильность выполнения учебной задачи</li>
+                                <li>Владение основами самоконтроля, самооценки, принятия решений</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="standards-result-item">
+                            <h5>Предметные результаты</h5>
+                            <p>Предметные результаты освоения основной образовательной программы основного общего образования с учетом общих требований ФГОС и специфики изучаемых предметов, входящих в состав предметных областей.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Среднее общее образование -->
+            <div class="tab-pane" id="secondary-standards">
+                <div class="standards-card">
+                    <h3>ФГОС среднего общего образования</h3>
+                    <p>В МОУ Размахнинская СОШ реализуется ФГОС среднего общего образования (10-11 классы).</p>
+                    
+                    <div class="standards-info">
+                        <div class="standards-info-item">
+                            <h4>Нормативный документ</h4>
+                            <p>Приказ Министерства образования и науки РФ от 17 мая 2012 г. № 413 "Об утверждении федерального государственного образовательного стандарта среднего общего образования" (с изменениями и дополнениями)</p>
+                            <div class="document-download">
+                                <a href="{% static 'documents/standards/fgos-soo-2012.pdf' %}" class="btn btn-outline btn-sm" download>
+                                     Скачать документ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Основные результаты освоения программы среднего общего образования</h4>
+                    <div class="standards-results">
+                        <div class="standards-result-item">
+                            <h5>Личностные результаты</h5>
+                            <ul class="standards-list">
+                                <li>Российская гражданская идентичность, патриотизм, уважение к своему народу</li>
+                                <li>Гражданская позиция как активного и ответственного члена российского общества</li>
+                                <li>Готовность к служению Отечеству, его защите</li>
+                                <li>Сформированность мировоззрения, соответствующего современному уровню развития науки</li>
+                                <li>Толерантное сознание и поведение в поликультурном мире</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="standards-result-item">
+                            <h5>Метапредметные результаты</h5>
+                            <ul class="standards-list">
+                                <li>Умение самостоятельно определять цели деятельности и составлять планы деятельности</li>
+                                <li>Умение продуктивно общаться и взаимодействовать в процессе совместной деятельности</li>
+                                <li>Владение навыками познавательной, учебно-исследовательской и проектной деятельности</li>
+                                <li>Готовность и способность к самостоятельной информационно-познавательной деятельности</li>
+                                <li>Умение использовать средства информационных и коммуникационных технологий</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="standards-result-item">
+                            <h5>Предметные результаты</h5>
+                            <p>Предметные результаты освоения основной образовательной программы устанавливаются для учебных предметов на базовом и углубленном уровнях.</p>
+                            <p>Предметные результаты на базовом уровне ориентированы на обеспечение преимущественно общеобразовательной и общекультурной подготовки.</p>
+                            <p>Предметные результаты на углубленном уровне ориентированы на подготовку к последующему профессиональному образованию.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="section">
+            <div class="section-header">
+           <span class="section-badge">Полезные ссылки</span>
+        </div>
+    
+    <div class="standards-card">
+        <div class="standards-links">
+            <a href="https://fgosreestr.ru/" target="_blank" class="standards-link-item">
+    
+                <div class="standards-link-content">
+                    <h4>Реестр примерных основных общеобразовательных программ</h4>
+                    <p>Государственная информационная система, в которой размещены примерные основные образовательные программы</p>
+                </div>
+            </a>
+            
+            <a href="https://edu.gov.ru/" target="_blank" class="standards-link-item">
+
+                <div class="standards-link-content">
+                    <h4>Министерство просвещения Российской Федерации</h4>
+                    <p>Официальный сайт Министерства просвещения РФ</p>
+                </div>
+            </a>
+            
+            <a href="https://fipi.ru/" target="_blank" class="standards-link-item">
+    
+                <div class="standards-link-content">
+                    <h4>Федеральный институт педагогических измерений</h4>
+                    <p>Сайт ФИПИ, где размещены документы, регламентирующие структуру и содержание контрольных измерительных материалов ЕГЭ и ОГЭ</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div></div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tabs functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                const tabContainer = this.closest('.tabs-container');
+                const tabPanes = tabContainer.querySelectorAll('.tab-pane');
+                const tabButtons = tabContainer.querySelectorAll('.tab-btn');
+                
+                // Remove active class from all buttons and panes in this container
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+                
+                // Add active class to current button and pane
+                this.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    });
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .standards-card {
+        background-color: #f8f9fa;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: var(--box-shadow);
+    }
+    
+    .standards-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .standards-feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .standards-feature-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(37, 99, 235, 0.1);
+        color: var(--primary-color);
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+    
+    .standards-feature-content h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .standards-feature-content p {
+        margin: 0;
+        color: var(--text-light);
+    }
+    
+    .tabs-container {
+        margin: 1.5rem 0;
+    }
+    
+
+
+    
+
+    
+    .tab-pane {
+        display: none;
+    }
+    
+    .tab-pane.active {
+        display: block;
+    }
+    
+    .standards-info {
+        margin: 1.5rem 0;
+        padding: 1.5rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .standards-info-item h4 {
+        color: var(--primary-color);
+        margin-bottom: 0.75rem;
+        font-size: 1.1rem;
+    }
+    
+    .document-download {
+        margin-top: 1rem;
+    }
+    
+    .standards-results {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .standards-result-item {
+        padding: 1.5rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .standards-result-item h5 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+    
+    .standards-list {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin-bottom: 0;
+    }
+    
+    .standards-list li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .standards-table-container {
+        overflow-x: auto;
+        margin: 1.5rem 0;
+    }
+    
+    .standards-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .standards-table th,
+    .standards-table td {
+        padding: 0.75rem;
+        text-align: left;
+        border: 1px solid var(--border-color);
+    }
+    
+    .standards-table th {
+        background-color: var(--primary-color);
+        color: white;
+    }
+    
+    .standards-table tr:nth-child(even) {
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    .standards-table tr:hover {
+        background-color: rgba(37, 99, 235, 0.05);
+    }
+    
+    .standards-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .standards-link-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        color: var(--text-color);
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .standards-link-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        color: var(--primary-color);
+    }
+    
+    .standards-link-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(37, 99, 235, 0.1);
+        color: var(--primary-color);
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+    
+    .standards-link-content h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .standards-link-content p {
+        margin: 0;
+        color: var(--text-light);
+        font-size: 0.9rem;
+    }
+    
+    .btn-sm {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.875rem;
+    }
+    
+    @media (max-width: 768px) {
+        .tabs-nav {
+            overflow-x: auto;
+            padding-bottom: 0.75rem;
+        }
+        
+        .tab-btn {
+            white-space: nowrap;
+        }
+        
+        .standards-table th,
+        .standards-table td {
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+    }
+</style>
+{% endblock %}
+

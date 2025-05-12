@@ -1,0 +1,276 @@
+{% extends 'include/base.html' %}
+{% load static %}
+
+{% block title %}МОУ "Размахнинская" СОШ - Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>МОУ "Размахнинская" СОШ</h1>
+
+            <div class="hero-buttons">
+                <a href="{% url 'info' %}" class="btn btn-primary btn-lg">О нас</a>
+                <a href="{% url 'organization_info' %}" class="btn btn-outline btn-lg">Основные сведения</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="news">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Последние обновления</span>
+            <h2>Новости и объявления</h2>
+            <p>Будьте в курсе последних событий в нашей школе.</p>
+        </div>
+<div class="news-grid">
+    {% for article in news_articles %}
+        <div class="news-card">
+            <a href="{% url 'news_details' article.id %}">
+                <div class="news-image">
+                    {% if article.image %}
+                        <img src="{{ article.image.url }}" alt="{{ article.title }}">
+                    {% else %}
+                        <img src="{% static 'images/news-placeholder.jpg' %}" alt="{{ article.title }}">
+                    {% endif %}
+                </div>
+                <div class="news-content">
+                    <h3>{{ article.title }}</h3>
+                    <p class="news-date">{{ article.date_posted|date:"F d, Y" }}</p>
+                    <p>{{ article.content|truncatewords:20 }}</p>
+                </div>
+            </a>
+        </div>
+    {% empty %}
+        <p>На данный момент новостей нет.</p>
+    {% endfor %}
+</div>
+
+        <div class="section-footer">
+            <a href="{% url 'news' %}" class="btn btn-outline">Смотреть все новости</a>
+        </div>
+    </div>
+</section>
+
+
+<section class="events">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">События</span>
+            <h2>Предстоящие события</h2>
+        </div>
+        <div class="events-tabs">
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-tab="all">Все</button>
+                <button class="tab-btn" data-tab="academic">Учеба</button>
+                <button class="tab-btn" data-tab="sports">Спорт</button>
+                <button class="tab-btn" data-tab="arts">Творчество</button>
+            </div>
+            <div class="tabs-content">
+    <!-- Все события -->
+<div class="tab-pane active" id="all">
+    {% if upcoming_events %}
+        {% for event in upcoming_events %}
+            <div class="event-card">
+                <div class="event-icon">
+                    {% if event.category == "academic" %}
+                        <img src="{% static 'images/1651776.png' %}">
+                    {% elif event.category == "sports" %}
+                        <img src="{% static 'images/2738884.png' %}">
+                    {% elif event.category == "arts" %}
+                        <img src="{% static 'images/160105.png' %}">
+                    {% else %}
+                        <i class="icon-calendar"></i>
+                    {% endif %}
+                </div>
+                <div class="event-details">
+                    <h3>{{ event.title }}</h3>
+                    <p><i class="icon-clock"></i> {{ event.date|date:"F d, Y | g:i A" }}</p>
+                    <p><i class="icon-map-pin"></i> {{ event.location }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Нет предстоящих событий.</p>
+    {% endif %}
+</div>
+
+    <!-- Учеба -->
+    <div class="tab-pane" id="academic">
+        {% for event in upcoming_events %}
+            {% if event.category == "academic" %}
+                <div class="event-card">
+                    <div class="event-icon"><img src="{% static 'images/1651776.png' %}"><i class="icon-calendar"></i></div>
+                    <div class="event-details">
+                        <h3>{{ event.title }}</h3>
+                        <p><i class="icon-clock"></i> {{ event.date|date:"F d, Y | g:i A" }}</p>
+                        <p><i class="icon-map-pin"></i> {{ event.location }}</p>
+                    </div>
+                </div>
+            {% endif %}
+        {% empty %}
+            <p>Нет событий в категории "Учеба".</p>
+        {% endfor %}
+    </div>
+
+    <!-- Спорт -->
+    <div class="tab-pane" id="sports">
+        {% for event in upcoming_events %}
+            {% if event.category == "sports" %}
+                <div class="event-card">
+                    <div class="event-icon"><img src="{% static 'images/2738884.png' %}"> <i class="icon-calendar"></i></div>
+                    <div class="event-details">
+                        <h3>{{ event.title }}</h3>
+                        <p><i class="icon-clock"></i> {{ event.date|date:"F d, Y | g:i A" }}</p>
+                        <p><i class="icon-map-pin"></i> {{ event.location }}</p>
+                    </div>
+                </div>
+            {% endif %}
+        {% empty %}
+            <p>Нет событий в категории "Спорт".</p>
+        {% endfor %}
+    </div>
+
+    <!-- Творчество -->
+    <div class="tab-pane" id="arts">
+        {% for event in upcoming_events %}
+            {% if event.category == "arts" %}
+                <div class="event-card">
+                    <div class="event-icon"><img src="{% static 'images/160105.png' %}"><i class="icon-calendar"></i></div>
+                    <div class="event-details">
+                        <h3>{{ event.title }}</h3>
+                        <p><i class="icon-clock"></i> {{ event.date|date:"F d, Y | g:i A" }}</p>
+                        <p><i class="icon-map-pin"></i> {{ event.location }}</p>
+                    </div>
+                </div>
+            {% endif %}
+        {% empty %}
+            <p>Нет событий в категории "Творчество".</p>
+        {% endfor %}
+    </div>
+</div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="faculty">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Руководство. Педагогический состав</span>
+
+<section class="director-section">
+    <div class="container">
+        <div class="director-card">
+            <div class="director-image">
+                <img src="{% static 'images/director.JPG' %}" alt="Директор школы">
+            </div>
+            <div class="director-info">
+
+<div class="infomes">
+                <div class="contact-info">
+                    <h2>Немеров Владимир Николаевич</h2>
+                <p class="position">Директор школы</p>
+                    <p><strong>Телефон</strong><br>+7 (3022) 392317</p>
+                    <p><strong>Электронная почта</strong><br>sosh@mail.ru</p>
+                    <p><strong>Часы приёма</strong><br>8.00-18.00</p>
+                </div>
+
+                <div class="mes">
+                    <p>
+                        Уважаемые родители, дорогие ребята, учителя и гости нашего сайта!<br>
+                        Я рад приветствовать вас на сайте нашей школы. Для ребёнка школа — это не просто место,
+                        где можно получить образование. Это мир ежедневных открытий, общения со сверстниками,
+                        творческих игр и увлечений. Это мир, в котором мы живём.
+                    </p>
+                    <p class="signature">С уважением, директор Немеров Владимир Николаевич</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary">Обратиться к директору</a>
+                </div></div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+            <h2>Наши преподаватели</h2>
+        </div>
+        <div class="faculty-grid">
+            {% if faculty_members %}
+                {% for faculty in faculty_members %}
+                    <div class="faculty-card">
+                        <div class="faculty-image">
+                            {% if faculty.image %}
+                                <img src="{{ faculty.image.url }}" alt="{{ faculty.name }}">
+                            {% else %}
+                                <img src="{% static 'images/faculty-placeholder.jpg' %}" alt="{{ faculty.name }}">
+                            {% endif %}
+                        </div>
+                        <h3>{{ faculty.name }}</h3>
+                        <p>{{ faculty.position }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="faculty-card">
+                    <div class="faculty-image">
+                        <img src="{% static 'images/faculty-placeholder.jpg' %}" alt="Dr. Sarah Johnson">
+                    </div>
+                    <h3>Dr. Sarah Johnson</h3>
+                    <p>Principal</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-image">
+                        <img src="{% static 'images/faculty-placeholder.jpg' %}" alt="Prof. Michael Chen">
+                    </div>
+                    <h3>Prof. Michael Chen</h3>
+                    <p>Science Department Chair</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-image">
+                        <img src="{% static 'images/faculty-placeholder.jpg' %}" alt="Ms. Emily Rodriguez">
+                    </div>
+                    <h3>Ms. Emily Rodriguez</h3>
+                    <p>Mathematics Teacher</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-image">
+                        <img src="{% static 'images/faculty-placeholder.jpg' %}" alt="Mr. David Wilson">
+                    </div>
+                    <h3>Mr. David Wilson</h3>
+                    <p>Athletic Director</p>
+                </div>
+            {% endif %}
+        </div>
+        <div class="section-footer">
+            <a href="{% url 'staff' %}" class="btn btn-outline">Посмотреть всех учителей</a>
+        </div>
+    </div>
+</section>
+
+{#<section class="cta">#}
+{#    <div class="container">#}
+{#        <div class="cta-content">#}
+{#            <h2>Ready to join our community?</h2>#}
+{#            <p>Take the first step towards a bright future. Apply now or schedule a campus visit to learn more about our programs.</p>#}
+{#            <div class="cta-buttons">#}
+{#                <a href="#" class="btn btn-primary btn-lg">Apply Now</a>#}
+{#                <a href="#" class="btn btn-outline btn-lg">Schedule a Visit</a>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+    <style>
+    .event-icon img{
+        width: 40px;
+        padding-left: 8px;
+    }
+    </style>
+{% endblock %}
+

@@ -1,0 +1,127 @@
+{% extends 'include/base.html' %}
+{% load static %}
+{% block title %}Основные сведения - {{ school_data.short_name }}{% endblock %}
+
+{% block content %}
+    <section class="page-header">
+        <div class="container">
+            <h1>Основные сведения</h1>
+        </div>
+    </section>
+
+    <section class="school-info-section">
+
+            <!-- Блок контактов -->
+
+
+            <!-- Основной контент -->
+            <div class="main-content">
+                <div class="info-section">
+                    <div class="title">
+{#                        <img src="{% static 'images/info_130.svg' %}" alt="">#}
+                        
+                        <h2>Официальные данные</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Сокращенное наименование: МОУ Размахнинская СОШ</p>
+                        <p class="full-name">Полное наименование: МУНИЦИПАЛЬНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ РАЗМАХНИНСКАЯ СРЕДНЯЯ ОБЩЕОБРАЗОВАТЕЛЬНАЯ ШКОЛА</p>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <strong>Дата создания: 01.09.1964</strong>
+                            </div>
+                            <div class="info-item">
+                                <strong>Учредитель:</strong>
+                                <span>Администрация Муниципального района «Шилкинский район»</span>
+                            </div>
+
+                            <div class="info-item">
+                                <strong>Режим работы:</strong>
+                                <span>5-дневная неделя, 8:00 - 17:30</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <div class="title">
+{#                        <img src="{% static 'images/educ.svg' %}" alt="">#}
+                        <h2>Образование</h2>
+                    </div>
+                    <div class="desc">
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <strong>Преподавательский состав:</strong>
+                                <span>25 учителей, 64% с высшим педагогическим образованием</span>
+                            </div>
+                            <div class="info-item">
+                                <strong>Формы обучения:</strong>
+                                <span>Дошкольное, начальное, основное общее образование</span>
+                            </div>
+                            <div class="info-item">
+                                <strong>Нормативный срок обучения:</strong>
+                                <span>1-4 классы: до 11 лет, 5-9 классы: до 16 лет, 10-11 классы: до 18 лет</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <div class="title">
+{#                        <img src="{% static 'images/doc.svg' %}" alt="">#}
+                        <h2>Аккредитация</h2>
+                    </div>
+                    <div class="desc">
+                        <div class="info-item">
+                            <strong>Регистрационный номер:</strong>
+                            <span>№ А007-01052-75/01150289</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Дата аккредитации:</strong>
+                            <span>28.02.2013</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <div class="title">
+{#                        <img src="{% static 'images/doc.svg' %}" alt="">#}
+                        <h2>Лицензии</h2>
+                    </div>
+                    <div class="desc">
+                        <ul>
+                            <li>Образовательная деятельность (07.03.2019)</li>
+                            <li>Образовательная деятельность, лицензия субъекта РФ (24.02.2022)</li>
+                            <li>Перевозка пассажиров автобусами (20.06.2019)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+                <div class="contact">
+                <div class="title">
+{#                    <img src="{% static 'images/contact.svg' %}" alt="">#}
+                    <h2>Контакты</h2>
+                </div>
+                <div class="desc">
+                    <p>Телефон: 8 (30244) 31-5-11</p>
+                    <p>Email: <a href="mailto:razmahnino-sosh2014@mail.ru">razmahnino-sosh2014@mail.ru</a></p>
+                    <p>Адрес: Забайкальский край, Шилкинский р., с. Размахнино, ул. Школьная, 4</p>
+                           
+                </div>
+                    <a href="{% url 'contact' %}"><button type="button" class="btn btn-primary">Подробнее</a></button>
+
+            </div>
+    </section>
+
+
+    <style>
+    button a{
+        color: white;
+    }button a:hover{
+        color: white;
+    }
+    </style>
+{% endblock %}

@@ -1,0 +1,343 @@
+{% extends 'include/base.html' %}
+{% load static %}
+{% block title %}Сведения об образовательной организации - МОУ Размахнинская СОШ{% endblock %}
+
+{% block content %}
+    <section class="page-header">
+        <div class="container">
+            <h1>Сведения об образовательной организации</h1>
+            <p>Официальная информация о МОУ Размахнинская СОШ</p>
+        </div>
+    </section>
+
+    <section class="organization-info-section">
+        <div class="container">
+            <div class="organization-info-intro">
+                <div class="school-logo">
+                    <img src="{% static 'images/s.jpg' %}" alt="МОУ Размахнинская СОШ">
+                </div>
+                <div class="school-details">
+                    <h2>МОУ Размахнинская СОШ</h2>
+                    <p class="school-full-name">МУНИЦИПАЛЬНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ РАЗМАХНИНСКАЯ СРЕДНЯЯ
+                        ОБЩЕОБРАЗОВАТЕЛЬНАЯ ШКОЛА</p>
+                    <p><strong>Год основания:</strong> 1964</p>
+                    <p><strong>Адрес:</strong> Забайкальский край, Шилкинский р., с.Размахнино, ул. Школьная,4.</p>
+                    <p><strong>Телефон:</strong> 8 30 (244) 31-5-11</p>
+                    <p><strong>Email:</strong> razmahnino-sosh2014@mail.ru</p>
+                </div>
+            </div>
+
+            <div class="info-categories">
+                <h2>Разделы сведений об образовательной организации</h2>
+                <p>В соответствии с постановлением Правительства Российской Федерации от 20 октября 2021 г. №1802</p>
+
+                <div class="info-grid">
+
+                    <a href="{% url 'info' %}" class="info-card">
+                        <div class="info-title">
+                            <div class="info-icon">
+
+                                <i class="icon-info"><img src="{% static 'images/1.svg' %}"></i>
+
+                            </div>
+                            <h3>Основные сведения</h3></div>
+                        <p>Информация о дате создания, учредителе, месте нахождения, режиме работы, контактных
+                            данных</p>
+                    </a>
+
+                    <a href="{% url 'structure' %}" class="info-card">
+                        <div class="info-title">
+                            <div class="info-icon">
+                                <i class="icon-organization"><img src="{% static 'images/2.svg' %}"></i>
+                            </div>
+                            <h3>Структура и органы управления</h3></div>
+                        <p>Информация о структуре и органах управления образовательной организацией</p>
+                    </a>
+
+                    <a href="{% url 'documents' %}" class="info-card">
+                        <div class="info-title">
+                            <div class="info-icon">
+                                <i class="icon-document"><img src="{% static 'images/3.svg' %}"></i>
+                            </div>
+                            <h3>Документы</h3></div>
+                        <p>Устав, лицензия, свидетельство о государственной аккредитации, локальные нормативные акты</p>
+                    </a>
+
+                    <a href="{% url 'education' %}" class="info-card">
+                        <div class="info-title">
+                            <div class="info-icon">
+                                <i class="icon-education"><img src="{% static 'images/4.svg' %}"></i>
+                            </div>
+                            <h3>Образование</h3></div>
+                        <p>Информация о реализуемых уровнях образования, формах обучения, нормативных сроках
+                            обучения</p>
+                    </a>
+
+                    <a href="{% url 'standart' %}" class="info-card">
+                        <div class="info-title">
+                            <div class="info-icon">
+                                <i class="icon-standard"><img src="{% static 'images/5.svg' %}"></i>
+                            </div>
+                            <h3>Образовательные стандарты</h3></div>
+                        <p>Информация о федеральных государственных образовательных стандартах</p>
+                    </a>
+
+                    <a href="{% url 'staff' %}" class="info-card">
+                        <div class="info-title">
+                            <div class="info-icon">
+                                <i class="icon-people"><img src="{% static 'images/6.svg' %}"></i>
+                            </div>
+                            <h3>Руководство. Педагогический состав</h3></div>
+                        <p>Информация о руководителе, заместителях руководителя, персональном составе педагогических
+                            работников</p>
+                    </a>
+                    <a href="{% url 'local_acts' %}" class="info-card">
+                        <div class="info-title">
+                            <div class="info-icon">
+
+                                <i class="icon-people"><img src="{% static 'images/7.svg' %}"></i>
+                            </div>
+                            <h3>Локальные акты образовательной организации</h3></div>
+                        <p>Информация о образовательной деятельности, образовательных стандартов, составе педагогических
+                            работников</p>
+                    </a>
+
+                    <a href="{% url 'material_support' %}" class="info-card">
+                        <div class="info-title">
+                            <div class="info-icon">
+                                <i class="icon-building"><img src="{% static 'images/10.svg' %}"></i>
+                            </div>
+                            <h3>Материально-техническое обеспечение</h3></div>
+                        <p>Информация о материально-техническом обеспечении образовательной деятельности</p>
+                    </a>
+
+                    <a href="{% url 'scholarships' %}" class="info-card">
+                        <div class="info-title">
+                            <div class="info-icon">
+                                <i class="icon-scholarship"><img src="{% static 'images/8.svg' %}"></i>
+                            </div>
+                            <h3>Стипендии и меры поддержки</h3></div>
+                        <p>Информация о стипендиях и иных видах материальной поддержки обучающихся</p>
+                    </a>
+
+                    <a href="{% url 'paid_services' %}" class="info-card">
+                        <div class="info-title">
+                            <div class="info-icon">
+                                <i class="icon-money"><img src="{% static 'images/9.svg' %}"></i>
+                            </div>
+                            <h3>Платные образовательные услуги</h3></div>
+                        <p>Информация о порядке оказания платных образовательных услуг</p>
+                    </a>
+
+                    <a href="{% url 'financial' %}" class="info-card">
+                        <div class="info-title">
+                            <div class="info-icon">
+                                <i class="icon-finance"><img src="{% static 'images/11.svg' %}"></i>
+                            </div>
+                            <h3>Финансово-хозяйственная деятельность</h3></div>
+                        <p>Информация об объеме образовательной деятельности, финансовое обеспечение которой
+                            осуществляется за счет бюджетных средств</p>
+                    </a>
+
+                    <a href="{% url 'vacant' %}" class="info-card">
+                        <div class="info-title">
+                            <div class="info-icon">
+                                <i class="icon-vacancy"><img src="{% static 'images/14.svg' %}"></i>
+                            </div>
+                            <h3>Вакантные места для приема</h3></div>
+                        <p>Информация о количестве вакантных мест для приема (перевода) по каждой образовательной
+                            программе</p>
+                    </a>
+                    <a href="{% url 'material_support' %}#dostyp" class="info-card">
+                        <div class="info-title">
+                            <div class="info-icon">
+                                <i class="icon-accessibility"><img src="{% static 'images/15.svg' %}"></i>
+                            </div>
+                            <h3>Доступная среда</h3></div>
+                        <p>Информация о специальных условиях для обучения инвалидов и лиц с ограниченными возможностями
+                            здоровья</p>
+                    </a>
+
+                    <a href="{% url 'international' %}" class="info-card">
+                        <div class="info-title">
+                            <div class="info-icon">
+                                <i class="icon-globe"><img src="{% static 'images/13.svg ' %} "></i>
+                            </div>
+                            <h3>Международное сотрудничество</h3></div>
+                        <p>Информация о заключенных и планируемых к заключению договорах с иностранными
+                            организациями</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block extra_css %}
+    <style>
+.icon-globe, .icon-accessibility, .icon-vacancy, .icon-finance, .icon-money, .icon-scholarship, .icon-building, .icon-people, .icon-standard, .icon-education, .icon-document, .icon-organization, .icon-info {
+    width: 37px;
+    height: 35px;
+    /* background-size: contain; */
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    display: inline-table;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* flex-wrap: nowrap; */
+}
+    [class^="icon-g"] {
+    width: 4em;
+    height: 3em;
+    /* background-size: contain; */
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    display: inline-table;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* flex-wrap: nowrap; */
+
+}
+
+
+        .info-title {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+
+
+
+
+        .organization-info-section {
+            padding: 4rem 0;
+        }
+
+        .organization-info-intro {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .school-logo {
+            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 50%;
+
+            box-shadow: var(--box-shadow);
+            overflow: hidden; /* Это важно, чтобы изображение не выходило за круглые границы */
+        }
+
+        .school-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Это обеспечит правильное масштабирование изображения */
+            border-radius: 50%; /* Дублируем круглую форму для изображения */
+        }
+
+        .school-details h2 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .school-full-name {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .school-details p {
+            margin-bottom: 0.5rem;
+        }
+
+        .info-categories {
+            margin-top: 2rem;
+        }
+
+        .info-categories h2 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-categories > p {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .info-card {
+            display: block;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        .info-card:hover {
+  background: linear-gradient(to right, #2d50c2, rgb(19, 72, 152));
+            color: white;
+                        transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+.info-card:hover img {
+    filter: brightness(0) invert(1);
+}
+.info-card:hover p {
+    filter: brightness(0) invert(1);
+}
+
+        .info-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .info-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .info-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .organization-info-intro {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .school-logo {
+                margin: 0 auto;
+            }
+        }
+    </style>
+{% endblock %}
+

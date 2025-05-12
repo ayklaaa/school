@@ -1,0 +1,459 @@
+{% extends 'include/base.html' %}
+{% load static %}
+{% block title %}Структура и органы управления - МОУ Размахнинская СОШ{% endblock %}
+
+{% block content %}
+    <section class="page-header">
+        <div class="container">
+            <h1>Структура и органы управления образовательной организацией</h1>
+            <p>Управление МОУ Размахнинская СОШ осуществляется в соответствии с законодательством Российской Федерации,
+                Уставом школы и строится на принципах единоначалия и коллегиальности.</p>
+        </div>
+    </section>
+    <div class="container">
+
+
+
+
+        <div class="section">
+
+        <div class="section-header">
+           <span class="section-badge">Ограны управления образовательной организации</span>
+        </div>
+            <div class="management-card">
+                <h3>Административное управление</h3>
+                <p>Административное управление школой осуществляет директор и его заместители.</p>
+                <div class="management-table-container">
+                    <table class="management-table">
+                        <thead>
+                        <tr>
+                            <th>Должность</th>
+                            <th>ФИО</th>
+                            <th>Контактная информация</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Директор</td>
+                            <td>Немеров Владимир Николаевич</td>
+                            <td>
+                                <p>Телефон: 8 30 (244) 31-5-11</p>
+                                <p>Email: director@razmahnino-sosh.ru</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Заместитель директора по учебно-воспитательной работе</td>
+                            <td>Немерова Татьяна Максимовна</td>
+                            <td>
+                                <p>Телефон: 8 30 (244) 31-5-12</p>
+                                <p>Email: uvr@razmahnino-sosh.ru</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Заместитель директора по воспитательной работе</td>
+                            <td>Сидоров Иван Михайлович</td>
+                            <td>
+                                <p>Телефон: 8 30 (244) 31-5-13</p>
+                                <p>Email: vr@razmahnino-sosh.ru</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Заместитель директора по административно-хозяйственной части</td>
+                            <td>Николаева Мария Сергеевна</td>
+                            <td>
+                                <p>Телефон: 8 30 (244) 31-5-14</p>
+                                <p>Email: ahc@razmahnino-sosh.ru</p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="management-card">
+                <h3>Коллегиальные органы управления</h3>
+                <p>В школе функционируют следующие коллегиальные органы управления:</p>
+
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Педагогический совет</h4>
+                            <span class="accordion-icon"></span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Педагогический совет является постоянно действующим коллегиальным органом управления
+                                школой,
+                                который создается для рассмотрения основных вопросов образовательного процесса.</p>
+                            <p><strong>Председатель:</strong> Иванова Елена Петровна, директор школы</p>
+                            <p><strong>Секретарь:</strong> Кузнецова Ольга Александровна, учитель русского языка и
+                                литературы</p>
+                            <div class="document-download">
+                                <a href="{% static 'documents/pedagogical-council.pdf' %}"
+                                   class="btn btn-outline btn-sm"
+                                   download>
+                                    <i class="icon-download"><img src="{% static 'images/download.svg' %}" alt=""></i> Положение о педагогическом совете
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Общее собрание работников</h4>
+                            <span class="accordion-icon"></span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Общее собрание работников является коллегиальным органом управления школой,
+                                представляющим
+                                интересы работников школы по вопросам регулирования социально-трудовых отношений.</p>
+                            <p><strong>Председатель:</strong> Смирнова Татьяна Владимировна, учитель математики</p>
+                            <p><strong>Секретарь:</strong> Козлова Наталья Игоревна, учитель начальных классов</p>
+                            <div class="document-download">
+                                <a href="{% static 'documents/general-meeting.pdf' %}" class="btn btn-outline btn-sm"
+                                   download>
+                                    <i class="icon-download"><img src="{% static 'images/download.svg' %}" alt=""></i> Положение об общем собрании работников
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Управляющий совет</h4>
+                            <span class="accordion-icon"></span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Управляющий совет является коллегиальным органом управления школой, реализующим принцип
+                                государственно-общественного характера управления образованием.</p>
+                            <p><strong>Председатель:</strong> Морозов Алексей Дмитриевич, представитель родительской
+                                общественности</p>
+                            <p><strong>Секретарь:</strong> Васильева Екатерина Николаевна, учитель истории</p>
+                            <div class="document-download">
+                                <a href="{% static 'documents/governing-council.pdf' %}" class="btn btn-outline btn-sm"
+                                   download>
+                                    <i class="icon-download"><img src="{% static 'images/download.svg' %}" alt=""></i> Положение об управляющем совете
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Совет обучающихся</h4>
+                            <span class="accordion-icon"></span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Совет обучающихся является органом ученического самоуправления, представляющим интересы
+                                обучающихся.</p>
+                            <p><strong>Председатель:</strong> Соколов Дмитрий, ученик 11 класса</p>
+                            <p><strong>Заместитель председателя:</strong> Волкова Анастасия, ученица 10 класса</p>
+                            <div class="document-download">
+                                <a href="{% static 'documents/student-council.pdf' %}" class="btn btn-outline btn-sm"
+                                   download>
+                                    <i class="icon-download"><img src="{% static 'images/download.svg' %}" alt=""></i> Положение о совете обучающихся
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Родительский комитет</h4>
+                            <span class="accordion-icon"></span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Родительский комитет является органом самоуправления школы и действует в соответствии с
+                                Уставом школы.</p>
+                            <p><strong>Председатель:</strong> Лебедева Светлана Игоревна</p>
+                            <p><strong>Заместитель председателя:</strong> Попов Андрей Викторович</p>
+                            <div class="document-download">
+                                <a href="{% static 'documents/parent-committee.pdf' %}" class="btn btn-outline btn-sm"
+                                   download>
+                                    <i class="icon-download"><img src="{% static 'images/download.svg' %}" alt=""></i> Положение о родительском комитете
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+        <div class="section-header">
+           <span class="section-badge">Структурные подразделения</span>
+        </div>
+
+            <div class="management-card">
+                <h3>Информация о структурных подразделениях</h3>
+                <div class="management-table-container">
+                    <table class="management-table">
+                        <thead>
+                        <tr>
+                            <th>Наименование</th>
+                            <th>Руководитель</th>
+                            <th>Местонахождение</th>
+                            <th>Контактная информация</th>
+                            <th>Документы</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Дошкольное отделение</td>
+                            <td>Белова Ирина Александровна</td>
+                            <td>Забайкальский край, Шилкинский р., с.Размахнино, ул. Школьная, 6</td>
+                            <td>
+                                <p>Телефон: 8 30 (244) 31-5-15</p>
+                                <p>Email: doshkol@razmahnino-sosh.ru</p>
+                            </td>
+                            <td>
+                                <a href="{% static 'documents/preschool-department.pdf' %}"
+                                   class="btn btn-outline btn-sm"
+                                   download>
+                                    Положение
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Библиотека</td>
+                            <td>Соловьева Наталья Петровна</td>
+                            <td>Забайкальский край, Шилкинский р., с.Размахнино, ул. Школьная, 4 (2 этаж)</td>
+                            <td>
+                                <p>Телефон: 8 30 (244) 31-5-11 (доб. 3)</p>
+                                <p>Email: library@razmahnino-sosh.ru</p>
+                            </td>
+                            <td>
+                                <a href="{% static 'documents/library.pdf' %}" class="btn btn-outline btn-sm" download>
+                                    Положение
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Школьный музей</td>
+                            <td>Орлов Сергей Викторович</td>
+                            <td>Забайкальский край, Шилкинский р., с.Размахнино, ул. Школьная, 4 (1 этаж)</td>
+                            <td>
+                                <p>Телефон: 8 30 (244) 31-5-11 (доб. 4)</p>
+                                <p>Email: museum@razmahnino-sosh.ru</p>
+                            </td>
+                            <td>
+                                <a href="{% static 'documents/museum.pdf' %}" class="btn btn-outline btn-sm" download>
+                                  Положение
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+
+        header.addEventListener('click', function () {
+            const wasActive = item.classList.contains('active');
+
+            // Закрыть все элементы
+            accordionItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    const otherContent = otherItem.querySelector('.accordion-content');
+                    otherContent.style.maxHeight = '0';
+                    otherContent.style.padding = '0 1rem';
+                }
+            });
+
+            // Открыть/закрыть текущий элемент
+            if (!wasActive) {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px'; // Устанавливаем точную высоту контента
+                content.style.padding = '1rem';
+            } else {
+                content.style.maxHeight = '0';
+                content.style.padding = '0 1rem';
+                setTimeout(() => {
+                    item.classList.remove('active');
+                }, 300); // Задержка для завершения анимации
+            }
+        });
+    });
+});
+    </script>
+{% endblock %}
+
+{% block extra_css %}
+    <style>
+        .structure-diagram {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .structure-image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .image-caption {
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .document-download {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .management-card {
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+
+            box-shadow: var(--box-shadow);
+        }
+
+        .management-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .management-table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .management-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .management-table th,
+        .management-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid var(--border-color);
+        }
+
+        .management-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .management-table tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .management-table tr:hover {
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+
+        .management-table p {
+            margin: 0.25rem 0;
+        }
+
+        .accordion {
+            margin: 1.5rem 0;
+        }
+
+        .accordion-item {
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 1000px; /* Достаточно для контента */
+            padding: 1rem;
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+
+        .accordion-header h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .accordion-icon {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 1rem;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+
+        .accordion-icon::before,
+        .accordion-icon::after {
+            content: '';
+            position: absolute;
+            background-color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-icon::before {
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .accordion-icon::after {
+            width: 2px;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .accordion-item.active .accordion-icon::after {
+            transform: translateX(-50%) rotate(90deg);
+        }
+
+        .btn-sm {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .management-table th,
+            .management-table td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+{% endblock %}
+

@@ -1,0 +1,697 @@
+{% extends 'include/base.html' %}
+{% load static %}
+
+{% block title %}Независимая оценка качества образования - МОУ Размахнинская СОШ{% endblock %}
+
+{% block content %}
+<section class="page-header">
+<div class="container">
+    <h1>Независимая оценка качества образования</h1>
+    <p>Информация о проведении независимой оценки качества образовательной деятельности</p>
+</div></section>
+<div class="container">
+<div class="section">
+                               <div class="section-header">
+           <span class="section-badge">Оцените качество образования в нашей школе</span>
+        </div>
+    <div class="quality-banner">
+        <div class="quality-banner-content">
+
+
+            <p>Независимая оценка качества образования — это оценочная процедура, которая осуществляется в отношении деятельности образовательных организаций и реализуемых ими образовательных программ в целях определения соответствия предоставляемого образования.</p>
+            <div class="quality-banner-buttons">
+                <a href="#assessment" class="btn btn-primary">Пройти оценку</a>
+                <a href="#results" class="btn btn-outline">Результаты оценки</a>
+                <a href="#documents" class="btn btn-outline">Нормативные документы</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="section" id="assessment">
+  
+                               <div class="section-header">
+           <span class="section-badge">Пройти оценку</span>
+        </div>
+
+    <div class="quality-card">
+        <div class="quality-card-header">
+            <h3>Оцените качество образования</h3>
+        </div>
+        <div class="quality-card-content">
+            <p class="text-center">Для участия в независимой оценке качества образования отсканируйте QR-код или перейдите по ссылке ниже:</p>
+
+            <div class="qr-container">
+                <div class="qr-code">
+                    <img src="{% static 'images/qr.png' %}" alt="QR-код для оценки качества образо��ания" onerror="this.src='/placeholder.svg?height=200&width=200'">
+                </div>
+                <div class="qr-description">
+                    <p>Отсканируйте QR-код с помощью камеры вашего смартфона, чтобы перейти на страницу оценки</p>
+                </div>
+                <a href="https://bus.gov.ru/quality-rating" class="btn btn-primary" target="_blank">Пройти оценку на сайте bus.gov.ru</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="section" id="results">
+
+                           <div class="section-header">
+           <span class="section-badge">Результаты независимой оценки</span>
+        </div>
+    <div class="quality-card">
+        <div class="quality-card-header">
+            <h3>Результаты НОКО за 2020 год</h3>
+        </div>
+        <div class="quality-card-content">
+            <div class="results-container">
+                <div class="results-chart">
+                    <img src="{% static 'images/2020.png' %}" alt="График результатов оценки" onerror="this.src='/placeholder.svg?height=400&width=600'">
+                </div>
+
+                <div class="results-stats">
+                    <h4>Итоговые баллы по критериям:</h4>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">82%</div>
+                            <div class="stat-label">Общая оценка</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">85%</div>
+                            <div class="stat-label">Открытость информации</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">79%</div>
+                            <div class="stat-label">Комфортность условий</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">77%</div>
+                            <div class="stat-label">Доступность для инвалидов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">96%</div>
+                            <div class="stat-label">Доброжелательность</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">83%</div>
+                            <div class="stat-label">Удовлетворенность</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <p>Полные результаты независимой оценки качества условий осуществления образовательной деятельности доступны на официальном сайте для размещения информации о государственных (муниципальных) учреждениях <a href="https://bus.gov.ru" target="_blank">bus.gov.ru</a>.</p>
+                <a href="https://bus.gov.ru/quality-rating" class="btn btn-outline" target="_blank">Посмотреть результаты на bus.gov.ru</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="documents">
+                               <div class="section-header">
+           <span class="section-badge">Нормативные документы</span>
+        </div>
+
+
+    <div class="quality-card">
+        <div class="quality-card-header">
+            <h3>Документы по НОКО</h3>
+        </div>
+        <div class="quality-card-content">
+            <h4>Федеральные документы</h4>
+            <ul class="document-list">
+                <li>
+                    <a href="{% static 'documents/federal-law.rtf' %}" target="_blank">
+             
+                        <span>Федеральный закон "Об образовании в Российской Федерации" от 29.12.2012 N 273-ФЗ (статья 95)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% static 'documents/1547.pdf' %}" target="_blank">
+                
+                        <span>Приказ Минобрнауки России от 05.12.2014 N 1547 "Об утверждении показателей, характеризующих общие критерии оценки качества образовательной деятельности"</span>
+                    </a>
+                </li>
+            </ul>
+
+            <h4>Локальные документы</h4>
+            <ul class="document-list">
+                <li>
+                    <a href="{% static 'documents/school-regulations.docx' %}" target="_blank">
+                    
+                        <span>Положение о проведении НОКО в МОУ Размахнинская СОШ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% static 'documents/school-regulations.docx' %}" target="_blank">
+                  
+                        <span>План мероприятий по улучшению качества работы МОУ Размахнинская СОШ по результатам НОКО</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="section">
+    <div class="quality-cta">
+        <div class="quality-cta-content">
+            <h2>Ваше мнение важно для нас!</h2>
+            <p>Примите участие в независимой оценке качества образования и помогите нам стать лучше. Ваше мнение поможет выявить сильные и слабые стороны нашей работы.</p>
+            <div class="quality-cta-buttons">
+                <a href="#assessment" class="btn btn-primary">Пройти оценку</a>
+                <a href="{% url 'contact' %}" class="btn btn-outline">Связаться с нами</a>
+            </div>
+        </div>
+
+    </div>
+</div></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // FAQ accordion functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const toggle = item.querySelector('.faq-toggle');
+
+            question.addEventListener('click', function() {
+                // Toggle current item
+                const isOpen = answer.style.display === 'block';
+                answer.style.display = isOpen ? 'none' : 'block';
+                toggle.textContent = isOpen ? '+' : '−';
+
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherToggle = otherItem.querySelector('.faq-toggle');
+                        otherAnswer.style.display = 'none';
+                        otherToggle.textContent = '+';
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+
+    <style>
+/* Стили для страницы "Независимая оценка качества образования" */
+
+/* Общие стили */
+.info-header {
+  margin-bottom: 2rem;
+}
+
+.info-header h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.info-section {
+  margin-bottom: 2rem;
+}
+
+.info-section:last-child {
+  margin-bottom: 0;
+}
+
+.info-section h2 {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Баннер */
+.quality-banner {
+  display: flex;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+}
+
+.quality-banner-content {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quality-banner-content h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.quality-banner-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.quality-banner-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+}
+
+.quality-banner-image {
+  flex: 1;
+  min-height: 300px;
+  position: relative;
+}
+
+.quality-banner-image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Информационные карточки */
+.quality-card {
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+}
+
+.quality-card-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 1.5rem;
+}
+
+.quality-card-header h3 {
+  margin: 0;
+}
+
+.quality-card-content {
+  padding: 1.5rem;
+}
+
+/* QR-код */
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.qr-code {
+  width: 200px;
+  height: 200px;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 1rem;
+}
+
+.qr-code img {
+  width: 100%;
+  height: 100%;
+}
+
+.qr-description {
+  text-align: center;
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+/* Критерии оценки */
+.criteria-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.criteria-item {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.criteria-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(37, 99, 235, 0.1);
+  border-radius: 50%;
+}
+
+.criteria-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.criteria-item h4 {
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.criteria-item p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Результаты оценки */
+.results-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.results-chart {
+  flex: 2;
+  min-width: 300px;
+}
+
+.results-chart img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.results-stats {
+  flex: 1;
+  min-width: 250px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.stat-item {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* Документы */
+.document-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.document-list li {
+  margin-bottom: 0.75rem;
+}
+
+.document-list a {
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease;
+}
+
+.document-list a:hover {
+  background-color: #e9ecef;
+}
+
+.document-list i {
+  margin-right: 0.75rem;
+  color: var(--primary-color);
+}
+
+/* План мероприятий (временная шкала) */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.5rem;
+  width: 2px;
+  background-color: var(--primary-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-badge {
+  position: absolute;
+  top: 0.25rem;
+  left: -2rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+.timeline-panel {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.timeline-heading h4 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.timeline-heading p {
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.timeline-body p {
+  margin-bottom: 0;
+}
+
+/* FAQ */
+.faq {
+  margin-bottom: 2rem;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: rgba(37, 99, 235, 0.05);
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.faq-toggle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.faq-answer {
+  display: none;
+  padding: 1rem 1.5rem;
+  background-color: white;
+  border-top: 1px solid var(--border-color);
+}
+
+.faq-answer p {
+  margin: 0;
+}
+
+/* Контактная информация */
+.contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--primary-color);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.contact-details h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-details p {
+  margin: 0;
+  margin-bottom: 0.25rem;
+  color: var(--text-light);
+}
+
+/* CTA блок */
+.quality-cta {
+  display: flex;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.quality-cta-content {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quality-cta-content h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.quality-cta-content p {
+  margin-bottom: 1.5rem;
+}
+
+.quality-cta-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.quality-cta-image {
+  flex: 1;
+  min-height: 250px;
+  position: relative;
+}
+
+.quality-cta-image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .quality-banner {
+    flex-direction: column;
+  }
+
+  .quality-banner-image {
+    min-height: 200px;
+    position: relative;
+  }
+
+  .results-container {
+    flex-direction: column;
+  }
+
+  .quality-cta {
+    flex-direction: column;
+  }
+
+  .quality-cta-image {
+    min-height: 200px;
+    position: relative;
+  }
+}
+
+    </style>
+
+{% endblock %}

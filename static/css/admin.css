@@ -1,0 +1,214 @@
+/* Дополнительные стили для административной панели */
+
+/* Стили для таблиц */
+.results {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  text-align: left;
+  padding: 8px;
+  border-bottom: 2px solid #ddd;
+}
+
+.results td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.results tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Стили для форм */
+.form-row {
+  margin-bottom: 15px;
+}
+
+.form-row label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-row input[type="text"],
+.form-row input[type="password"],
+.form-row input[type="email"],
+.form-row input[type="number"],
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-row textarea {
+  height: 120px;
+}
+
+/* Стили для сообщений */
+.messagelist {
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.messagelist li {
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  list-style: none;
+  border-radius: 4px;
+}
+
+.messagelist .success {
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
+  color: #3c763d;
+}
+
+.messagelist .warning {
+  background-color: #fcf8e3;
+  border: 1px solid #faebcc;
+  color: #8a6d3b;
+}
+
+.messagelist .error {
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  color: #a94442;
+}
+
+/* Стили для кнопок действий */
+.object-tools {
+  margin-top: 15px;
+}
+
+.object-tools a {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.object-tools a:hover {
+  background-color: #2980b9;
+}
+
+/* Стили для вкладок */
+.tabs {
+  margin: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabs a {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-right: 5px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  text-decoration: none;
+  color: #666;
+}
+
+.tabs a:hover {
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+
+.tabs a.active {
+  background-color: white;
+  border-color: #ddd;
+  border-bottom-color: white;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Стили для пагинации */
+.paginator {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.paginator a,
+.paginator span {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 2px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.paginator a:hover {
+  background-color: #f5f5f5;
+}
+
+.paginator .this-page {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+/* Стили для фильтров */
+.filter {
+  margin-bottom: 20px;
+}
+
+.filter h3 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.filter ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.filter li {
+  margin-bottom: 5px;
+}
+
+.filter a {
+  text-decoration: none;
+}
+
+.filter a:hover {
+  text-decoration: underline;
+}
+
+.filter .selected {
+  font-weight: bold;
+}
+
+/* Стили для поля поиска */
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-container button {
+  padding: 8px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: #2980b9;
+}

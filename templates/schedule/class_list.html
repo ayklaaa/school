@@ -1,0 +1,313 @@
+{% extends 'include/base.html' %}
+{% load static %}
+{% block title %}Расписание занятий по классам - МОУ Размахнинская СОШ{% endblock %}
+
+{% block content %}
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Расписание занятий по классам</h1>
+            <p>Актуальное расписание занятий для учащихся МОУ Размахнинская СОШ</p>
+
+        </div>
+    </section>
+    <div class="container">
+        <div class="section">
+            <div class="schedule-card">
+                <div class="schedule-controls">
+                    <div class="schedule-selector">
+    <h3>Выберите класс:</h3>
+    <div class="class-buttons">
+        {% for class_obj in classes %}
+            <a href="{% url 'schedule' class_obj.id %}"
+               class="class-button {% if selected_class and class_obj.id == selected_class.id %}active{% endif %}">
+                {{ class_obj.name }}
+            </a>
+        {% endfor %}
+    </div>
+</div>
+
+                </div>
+
+                <div class="schedule-info">
+                    <h2>Расписание занятий {{ selected_class.name }} класса</h2>
+                    <p>Действует с 1 сентября 2023 года</p>
+                </div>
+
+                <div class="schedule-tabs">
+                    <div class="tabs-nav">
+                        {% for day in days_of_week %}
+                            <button class="tab-btn {% if forloop.counter0 == 0 %}active{% endif %}"
+                                    data-tab="day-{{ forloop.counter0 }}">{{ day }}</button>
+                        {% endfor %}
+                    </div>
+
+                    <div class="tabs-content">
+                        {% for day, lessons in schedule.items %}
+                            <div class="tab-pane {% if forloop.counter0 == 0 %}active{% endif %}"
+                                 id="day-{{ forloop.counter0 }}">
+                                {% if lessons %}
+                                    <div class="schedule-table-container">
+                                        <table class="schedule-table">
+                                            <thead>
+                                            <tr>
+                                                <th>№</th>
+                                                <th>Предмет</th>
+                                                <th>Учитель</th>
+                                                <th>Кабинет</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for lesson in lessons %}
+                                                <tr>
+                                                    <td>{{ lesson.lesson_number }}</td>
+                                                    <td>{{ lesson.subject.name }}</td>
+                                                    <td>{{ lesson.teacher }}</td>
+                                                    <td>{{ lesson.class_name.classroom.name }}</td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                {% else %}
+                                    <div class="schedule-empty">
+                                        <p>Нет занятий в этот день</p>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Tabs functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const tabId = this.getAttribute('data-tab');
+
+                    // Remove active class from all buttons and panes
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                    // Add active class to current button and pane
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+{% endblock %}
+
+
+<style>
+    .schedule-card {
+        background-color: #f8f9fa;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: var(--box-shadow);
+    }
+
+    .schedule-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .schedule-selector h3 {
+        margin-bottom: 0.75rem;
+        font-size: 1.1rem;
+    }
+
+    .class-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .class-button {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: white;
+        border: 1px solid var(--border-color);
+        border-radius: 0.25rem;
+        color: var(--text-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .class-button:hover {
+        background-color: rgba(37, 99, 235, 0.1);
+        color: var(--primary-color);
+    }
+
+    .class-button.active {
+        background-color: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+    }
+
+    .schedule-actions {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .schedule-info {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .schedule-info h2 {
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+    }
+
+    .schedule-info p {
+        color: var(--text-light);
+    }
+
+    .schedule-tabs {
+        margin-bottom: 1.5rem;
+    }
+
+    .tabs-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.5rem;
+    }
+
+    .tab-btn {
+        background: none;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-weight: 500;
+        color: var(--text-color);
+        border-radius: 0.25rem;
+        transition: all 0.3s ease;
+    }
+
+    .tab-btn:hover {
+        background-color: rgba(37, 99, 235, 0.1);
+        color: var(--primary-color);
+    }
+
+    .tab-btn.active {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .tab-pane {
+        display: none;
+    }
+
+    .tab-pane.active {
+        display: block;
+    }
+
+    .schedule-table-container, .bells-table-container {
+        overflow-x: auto;
+        margin: 1rem 0;
+    }
+
+    .schedule-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 0.75rem;
+        text-align: left;
+        border: 1px solid var(--border-color);
+    }
+
+    .schedule-table th {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .schedule-table tr:nth-child(even) {
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    .schedule-table tr:hover {
+        background-color: rgba(37, 99, 235, 0.05);
+    }
+
+    .schedule-empty {
+        padding: 2rem;
+        text-align: center;
+        background-color: white;
+        border-radius: 0.5rem;
+        border: 1px dashed var(--border-color);
+    }
+
+    .schedule-empty p {
+        color: var(--text-light);
+        font-style: italic;
+    }
+
+    .schedule-notes {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-left: 4px solid var(--primary-color);
+    }
+
+    .schedule-notes h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .schedule-notes ul {
+        padding-left: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .schedule-notes li {
+        margin-bottom: 0.25rem;
+    }
+
+    @media (max-width: 768px) {
+        .schedule-controls {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .schedule-actions {
+            flex-direction: column;
+        }
+
+        .tabs-nav {
+            overflow-x: auto;
+            padding-bottom: 0.75rem;
+        }
+
+        .tab-btn {
+            white-space: nowrap;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+    }
+</style>

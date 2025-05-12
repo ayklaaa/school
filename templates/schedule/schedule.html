@@ -1,0 +1,489 @@
+{% extends 'include/base.html' %}
+{% load static %}
+
+{% block title %}Расписание для {{ class_obj.name }} - МОУ Размахнинская СОШ{% endblock %}
+
+{% block content %}
+    
+<section class="page-header">
+    <h1 class="admission-title">Расписание для {{ class_obj.name }} класса</h1>
+    <div class="admission-subtitle">Актуальное расписание занятий с учетом замен</div>
+</section>
+
+<div class="container">
+    {% regroup lessons by day_of_week as day_list %}
+
+    {% for day in day_list %}
+    <div class="section">
+        <div class="section-header">
+            <span class="section-badge">{{ day.grouper }}</span>
+        </div>
+        <div class="admission-card">
+            <div class="admission-card-content">
+                <div class="education-table-container">
+                    <table class="education-table">
+                        <thead>
+                            <tr>
+                                <th>Номер урока</th>
+                                <th>Предмет</th>
+                                <th>Учитель</th>
+                                <th>Замена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for lesson in day.list %}
+                            <tr>
+                                <td>{{ lesson.lesson_number }}</td>
+                                <td>{{ lesson.subject }}</td>
+                                <td>{{ lesson.teacher }}</td>
+                                <td>
+                                    {% for replacement in replacements %}
+                                        {% if replacement.original_lesson == lesson %}
+                                            <span class="no-data">
+                                                {{ replacement.new_subject }} ({{ replacement.new_teacher }})
+                                            </span>
+                                        {% endif %}
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    <style>
+.education-card {
+background-color: #f8f9fa;
+border-radius: 0.5rem;
+padding: 1.5rem;
+margin-bottom: 2rem;
+box-shadow: var(--box-shadow);
+}
+
+.section-header {
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.tabs-nav {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-color);
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+
+}
+
+
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.document-download {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.education-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.education-detail-item h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.education-detail-item p {
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.education-table-container {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.education-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.education-table th,
+.education-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.education-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.education-table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.education-table tr:hover {
+    background-color: rgba(37, 99, 235, 0.05);
+}
+
+.calendar-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.calendar-highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-highlight-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--primary-color);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.calendar-highlight-content h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.calendar-highlight-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.btn-sm {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+.week-menu {
+    margin-bottom: 2rem;
+}
+
+.week-menu h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.menu-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.food-cta {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+}
+
+.food-cta h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.food-cta p {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.food-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.food-cta .btn-outline {
+    border-color: white;
+    color: white;
+}
+
+.food-cta .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.no-data {
+    color: #e74c3c;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .tabs-nav {
+        overflow-x: auto;
+        padding-bottom: 0.75rem;
+    }
+
+    .tab-btn {
+        white-space: nowrap;
+    }
+
+    .education-table th,
+    .education-table td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .food-cta {
+        padding: 1.5rem;
+    }
+}
+
+
+</style>
+<style>
+    /* Основные стили */
+    .admission-title {
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+.admission-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+/* Карточки */
+.admission-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.admission-card-header {
+    background: var(--primary-color);
+    padding: 1.5rem;
+    color: white;
+}
+
+.admission-card-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.admission-card-content {
+    padding: 2rem;
+}
+
+/* Таблица */
+.admission-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.admission-table th,
+.admission-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.admission-table thead {
+    background: var(--primary-color);
+    color: white;
+}
+
+.admission-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+/* Списки */
+.admission-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.admission-list li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.admission-list li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* Кнопки */
+.admission-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.admission-button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.admission-button:first-child {
+    background: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+}
+
+.admission-button:last-child {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+/* Таймлайн */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin: 2rem 0;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: var(--primary-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.timeline-date {
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+}
+
+/* Аккордеон */
+.accordion-header {
+    padding: 1rem;
+    background: #f8f9fa;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.accordion-header:hover {
+    background: #e9ecef;
+}
+
+.accordion-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion-content p {
+    padding: 1rem;
+    margin: 0;
+}
+
+.accordion-header.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .admission-title {
+        font-size: 2rem;
+    }
+
+    .admission-card-content {
+        padding: 1.5rem;
+    }
+
+    .admission-table {
+        font-size: 0.9rem;
+    }
+
+    .timeline-item {
+        padding-left: 1.5rem;
+    }
+}
+
+
+</style>
+{% endblock %}

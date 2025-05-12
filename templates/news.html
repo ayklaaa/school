@@ -1,0 +1,47 @@
+
+{% extends 'include/base.html' %}
+{% load static %}
+
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+
+
+
+
+<section class="news">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Последние обновления</span>
+            <h2>Новости и объявления</h2>
+            <p>Будьте в курсе последних событий в нашей школе.</p>
+        </div>
+        <div class="news-grid">
+            {% for article in news_articles %}
+                <div class="news-card">
+                            <a href="{% url 'news_details' article.id %}">
+                    <div class="news-image">
+                        {% if article.image %}
+                            <img src="{{ article.image.url }}" alt="{{ article.title }}">
+                        {% else %}
+                            <img src="{% static 'images/news-placeholder.jpg' %}" alt="{{ article.title }}">
+                        {% endif %}
+                    </div>
+                    <div class="news-content">
+                        <h3>{{ article.title }}</h3>
+                        <p class="news-date">{{ article.date_posted|date:"F d, Y" }}</p>
+                        <p>{{ article.content|truncatewords:20 }}</p>
+                        <a href="{% url 'news_details' article.id  %}" class="read-more">Читать дальше <i class="icon-chevron-right"></i></a>
+                    </div>
+                </div></a>
+            {% empty %}
+                <p>На данный момент новостей нет.</p>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+
+{% endblock %}
+

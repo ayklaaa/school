@@ -1,0 +1,615 @@
+{% extends 'include/base.html' %}
+{% load static %}
+{% block title %}Мониторинг питания - МОУ Размахнинская СОШ{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Мониторинг питания</h1>
+        <p>Информация об организации питания обучающихся в МОУ Размахнинская СОШ</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="education-programs">
+        <div class="section-header">
+            <h2></h2>
+        </div>
+
+        <div class="education-tabs">
+                                   <div class="section-header">
+           <span class="section-badge">Текущее меню</span>
+        </div>
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-tab="current-menu">Текущее меню</button>
+                <button class="tab-btn" data-tab="archive-menu">Архив меню</button>
+                <button class="tab-btn" data-tab="diet-menu">Диетическое питание</button>
+            </div>
+
+            <div class="tabs-content">
+                <!-- Текущее меню -->
+                <div class="tab-pane active" id="current-menu">
+                    {% if primary_menu %}
+                    <div class="education-card">
+                        <div class="menu-header">
+                            {% if primary_menu.week1 %}
+                                <p><strong>Неделя 1:</strong> {{ primary_menu.week1.name }} ({{ primary_menu.week1.start_date }} - {{ primary_menu.week1.end_date }})</p>
+                            {% endif %}
+                            {% if primary_menu.week2 %}
+                                <p><strong>Неделя 2:</strong> {{ primary_menu.week2.name }} ({{ primary_menu.week2.start_date }} - {{ primary_menu.week2.end_date }})</p>
+                            {% endif %}
+                        </div>
+
+                        {% if primary_menu.week1 %}
+                        <div class="week-menu">
+                            <h3>Меню на Неделю 1</h3>
+                            <div class="education-table-container">
+                                <table class="education-table">
+                                    <thead>
+                                        <tr>
+                                            <th>День</th>
+                                            <th>Тип меню</th>
+                                            <th>Блюдо</th>
+                                            <th>Описание</th>
+                                            <th>Калории</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for day in primary_menu.week1.days %}
+                                            {% for item in day.items %}
+                                            <tr>
+                                                {% if forloop.first %}
+                                                <td rowspan="{{ day.items|length }}">{{ day.day }}</td>
+                                                <td rowspan="{{ day.items|length }}">{{ day.menu_type }}</td>
+                                                {% endif %}
+                                                <td>{{ item.name }}</td>
+                                                <td>{{ item.description }}</td>
+                                                <td>{{ item.calories }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        {% if primary_menu.week2 %}
+                        <div class="week-menu">
+                            <h3>Меню на Неделю 2</h3>
+                            <div class="education-table-container">
+                                <table class="education-table">
+                                    <thead>
+                                        <tr>
+                                            <th>День</th>
+                                            <th>Тип меню</th>
+                                            <th>Блюдо</th>
+                                            <th>Описание</th>
+                                            <th>Калории</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for day in primary_menu.week2.days %}
+                                            {% for item in day.items %}
+                                            <tr>
+                                                {% if forloop.first %}
+                                                <td rowspan="{{ day.items|length }}">{{ day.day }}</td>
+                                                <td rowspan="{{ day.items|length }}">{{ day.menu_type }}</td>
+                                                {% endif %}
+                                                <td>{{ item.name }}</td>
+                                                <td>{{ item.description }}</td>
+                                                <td>{{ item.calories }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {% endif %}
+
+
+                    </div>
+                    {% else %}
+                    <div class="education-card">
+                        <p class="no-data">Меню на текущую неделю не найдено.</p>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Архив меню -->
+                <div class="tab-pane" id="archive-menu">
+                    <div class="education-card">
+                        <h3>Архив школьного меню</h3>
+                        <p>Выберите период для просмотра архивного меню:</p>
+
+                        <div class="education-table-container">
+                            <table class="education-table">
+                                <thead>
+                                    <tr>
+                                        <th>Период</th>
+                                        <th>Название меню</th>
+                                        <th>Действия</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01.09.2023 - 30.09.2023</td>
+                                        <td>Осеннее меню 2023</td>
+                                        <td>
+                              
+                                            <a href="#" class="btn btn-outline btn-sm">Скачать</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>01.10.2023 - 31.10.2023</td>
+                                        <td>Октябрьское меню 2023</td>
+                                        <td>
+          
+                                            <a href="#" class="btn btn-outline btn-sm">Скачать</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>01.11.2023 - 30.11.2023</td>
+                                        <td>Ноябрьское меню 2023</td>
+                                        <td>
+                                      
+                                            <a href="#" class="btn btn-outline btn-sm">Скачать</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Диетическое питание -->
+                <div class="tab-pane" id="diet-menu">
+                    <div class="education-card">
+                        <h3>Диетическое и специализированное питание</h3>
+                        <p>Для обучающихся, нуждающихся в диетическом питании, предоставляется специальное меню по медицинским показаниям.</p>
+
+                        <div class="education-details">
+                            <div class="education-detail-item">
+                                <h4>Порядок предоставления</h4>
+                                <p>Для организации специального питания необходимо предоставить медицинское заключение и заявление от родителей.</p>
+                            </div>
+                            <div class="education-detail-item">
+                                <h4>Ответственный</h4>
+                                <p>Иванова Мария Петровна, тел. +7 (914) 321-54-56</p>
+                            </div>
+                        </div>
+
+                        <div class="document-download">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="education-programs">
+     <div class="education-tabs">
+                                   <div class="section-header">
+           <span class="section-badge">График питания</span>
+        </div>
+
+        <div class="education-card">
+            <h3>Расписание приема пищи</h3>
+
+            <div class="calendar-highlights">
+                <div class="calendar-highlight-item">
+    
+                    <div class="calendar-highlight-content">
+                        <h4>Завтрак</h4>
+                        <p>08:30 - 09:00 (1-4 классы)</p>
+                        <p>09:00 - 09:30 (5-11 классы)</p>
+                    </div>
+                </div>
+
+                <div class="calendar-highlight-item">
+    
+                    <div class="calendar-highlight-content">
+                        <h4>Обед</h4>
+                        <p>12:00 - 12:30 (1-4 классы)</p>
+                        <p>13:00 - 13:30 (5-11 классы)</p>
+                    </div>
+                </div>
+
+                <div class="calendar-highlight-item">
+  
+                    <div class="calendar-highlight-content">
+                        <h4>Дополнительно</h4>
+                        <p>Для учащихся групп продленного дня предусмотрен полдник в 15:30</p>
+                    </div>
+                </div>
+            </div>
+
+ 
+        </div>
+    </div>
+
+    <div class="education-programs">
+     <div class="education-tabs">
+                                   <div class="section-header">
+           <span class="section-badge">Родительский контроль</span>
+        </div>
+
+        <div class="education-card">
+            <h3>Результаты проверок организации питания</h3>
+            <p>В школе действует система родительского контроля за организацией питания. Родители могут участвовать в проверках качества питания.</p>
+
+            <div class="education-table-container">
+                <table class="education-table">
+                    <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Мероприятие</th>
+
+                            <th>Отчет</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for result in monitoring_reports %}
+                        <tr>
+                            <td>{{ result.date|date:"d.m.Y" }}</td>
+                            <td>{{ result.description }}</td>
+
+                            <td>
+                                {% if result.report_file %}
+                                <a href="{{ result.report_file.url }}" class="btn btn-outline btn-sm">Скачать</a>
+                                {% else %}
+                                Нет отчета
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td>15.09.2023</td>
+                            <td>Проверка качества завтраков</td>
+                            <td>Родительский комитет 1-4 классов</td>
+                            <td>Высокая оценка качества</td>
+                            <td><a href="#" class="btn btn-outline btn-sm">Скачать</a></td>
+                        </tr>
+                        <tr>
+                            <td>10.10.2023</td>
+                            <td>Контроль температурного режима</td>
+                            <td>Родительский комитет 5-8 классов</td>
+                            <td>Замечаний нет</td>
+                            <td><a href="#" class="btn btn-outline btn-sm">Скачать</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="education-details">
+                <div class="education-detail-item">
+                    <h4>Как принять участие?</h4>
+                    <p>Для участия в родительском контроле обратитесь к классному руководителю или ответственному за питание.</p>
+                </div>
+                <div class="education-detail-item">
+                    <h4>График проверок</h4>
+                    <p>Проверки проводятся ежемесячно, график утверждается на родительском собрании.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="education-programs">
+     <div class="education-tabs">
+                                   <div class="section-header">
+           <span class="section-badge">Нормативные документы</span>
+        </div>
+
+        <div class="education-card">
+            <h3>Документы по организации питания</h3>
+
+            <div class="education-table-container">
+                <table class="education-table">
+                    <thead>
+                        <tr>
+                            <th>Наименование документа</th>
+                            <th>Дата утверждения</th>
+                            <th>Документ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Положение об организации питания обучающихся</td>
+                            <td>01.09.2023</td>
+                            <td>
+                                <a href="{% static 'documents/application-form2.docx' %}" class="btn btn-outline btn-sm">Скачать</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Порядок предоставления льготного питания</td>
+                            <td>01.09.2023</td>
+                            <td>
+                                <a href="{% static 'documents/application-form2.docx' %}" class="btn btn-outline btn-sm">Скачать</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Приказ об организации родительского контроля</td>
+                            <td>15.08.2023</td>
+                            <td>
+                                <a href="{% static 'documents/application-form2.docx' %}" class="btn btn-outline btn-sm">Скачать</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>СанПиН по организации питания</td>
+                            <td>01.09.2023</td>
+                            <td>
+                                <a href="{% static 'documents/application-form2.docx' %}" class="btn btn-outline btn-sm">Скачать</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="education-card food-cta">
+        <div class="food-cta-content">
+            <h2>Остались вопросы по питанию?</h2>
+            <p>Вы можете связаться с ответственным за организацию питания или оставить обращение через форму на сайте.</p>
+            <div class="food-cta-buttons">
+                <a href="{% url 'contact' %}" class="btn btn-primary">Связаться с нами</a>
+                <a href="tel:+7XXXXXXXXXX" class="btn btn-outline">Позвонить</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tabs functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                const tabContainer = this.closest('.tabs-container') || this.closest('.education-tabs');
+                const tabPanes = tabContainer.querySelectorAll('.tab-pane');
+                const tabButtons = tabContainer.querySelectorAll('.tab-btn');
+
+                // Remove active class from all buttons and panes in this container
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                // Add active class to current button and pane
+                this.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    });
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .education-card {
+        background-color: #f8f9fa;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: var(--box-shadow);
+    }
+
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .section-header h2 {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .tabs-nav {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        background: none;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-weight: 500;
+        color: var(--text-color);
+        border-radius: 0.25rem;
+        transition: all 0.3s ease;
+
+    }
+
+
+
+    .tab-pane {
+        display: none;
+    }
+
+    .tab-pane.active {
+        display: block;
+    }
+
+    .document-download {
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+
+    .education-details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .education-detail-item h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-light);
+    }
+
+    .education-detail-item p {
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+
+    .education-table-container {
+        overflow-x: auto;
+        margin: 1.5rem 0;
+    }
+
+    .education-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .education-table th,
+    .education-table td {
+        padding: 0.75rem;
+        text-align: left;
+        border: 1px solid var(--border-color);
+    }
+
+    .education-table th {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .education-table tr:nth-child(even) {
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    .education-table tr:hover {
+        background-color: rgba(37, 99, 235, 0.05);
+    }
+
+    .calendar-highlights {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .calendar-highlight-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .calendar-highlight-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(37, 99, 235, 0.1);
+        color: var(--primary-color);
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .calendar-highlight-content h4 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .calendar-highlight-content p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--text-light);
+    }
+
+    .btn-sm {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    .week-menu {
+        margin-bottom: 2rem;
+    }
+
+    .week-menu h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .menu-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .food-cta {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 2rem;
+    }
+
+    .food-cta h2 {
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .food-cta p {
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+    }
+
+    .food-cta-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .food-cta .btn-outline {
+        border-color: white;
+        color: white;
+    }
+
+    .food-cta .btn-outline:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .no-data {
+        color: #e74c3c;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .tabs-nav {
+            overflow-x: auto;
+            padding-bottom: 0.75rem;
+        }
+
+        .tab-btn {
+            white-space: nowrap;
+        }
+
+        .education-table th,
+        .education-table td {
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .food-cta {
+            padding: 1.5rem;
+        }
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,216 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Администрирование школьного сайта') }}{% endblock %}
+
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}">
+<style>
+    :root {
+        --primary: #2c3e50;
+        --secondary: #34495e;
+        --accent: #3498db;
+        --primary-fg: #fff;
+        
+        --body-fg: #333;
+        --body-bg: #f8f9fa;
+        --body-quiet-color: #666;
+        --body-loud-color: #000;
+        
+        --header-color: #fff;
+        --header-branding-color: var(--accent);
+        --header-bg: var(--primary);
+        --header-link-color: #fff;
+        
+        --breadcrumbs-fg: #999;
+        --breadcrumbs-link-fg: var(--body-fg);
+        --breadcrumbs-bg: #fff;
+        
+        --link-fg: #3498db;
+        --link-hover-color: #2980b9;
+        --link-selected-fg: #5b80b2;
+        
+        --hairline-color: #e8e8e8;
+        --border-color: #ccc;
+        
+        --error-fg: #ba2121;
+        
+        --message-success-bg: #dff0d8;
+        --message-success-border: #d6e9c6;
+        --message-success-text: #3c763d;
+        
+        --message-warning-bg: #fcf8e3;
+        --message-warning-border: #faebcc;
+        --message-warning-text: #8a6d3b;
+        
+        --message-error-bg: #f2dede;
+        --message-error-border: #ebccd1;
+        --message-error-text: #a94442;
+        
+        --button-bg: var(--primary);
+        --button-fg: var(--primary-fg);
+        --button-hover-bg: var(--secondary);
+        --default-button-bg: #f8f9fa;
+        --default-button-fg: #333;
+        --default-button-hover-bg: #e9ecef;
+    }
+    
+    #header {
+        height: auto;
+        padding: 15px 40px;
+        background: var(--primary);
+        color: var(--header-color);
+    }
+    
+    #header a:link, #header a:visited {
+        color: var(--header-link-color);
+    }
+    
+    #branding h1 {
+        font-size: 24px;
+        margin: 0;
+        font-weight: 600;
+        color: var(--header-branding-color);
+    }
+    
+    #branding h1 img {
+        max-height: 40px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    
+    #user-tools {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+    
+    .module h2, .module caption, .inline-group h2 {
+        background: var(--primary);
+        color: var(--header-color);
+        font-weight: 600;
+    }
+    
+    div.breadcrumbs {
+        background: var(--breadcrumbs-bg);
+        color: var(--breadcrumbs-fg);
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    div.breadcrumbs a {
+        color: var(--link-fg);
+    }
+    
+    .button, input[type=submit], input[type=button], .submit-row input, a.button {
+        background: var(--button-bg);
+        color: var(--button-fg);
+        border-radius: 4px;
+    }
+    
+    .button:hover, input[type=submit]:hover, input[type=button]:hover, .submit-row input:hover {
+        background: var(--button-hover-bg);
+    }
+    
+    .button.default, input[type=submit].default, .submit-row input.default {
+        background: var(--accent);
+    }
+    
+    .button.default:hover, input[type=submit].default:hover, .submit-row input.default:hover {
+        background: #2980b9;
+    }
+    
+    .dashboard .module table th {
+        width: 100%;
+    }
+    
+    .dashboard .module table td {
+        white-space: nowrap;
+    }
+    
+    .dashboard .module table td a {
+        display: block;
+        padding-right: .6em;
+    }
+    
+    /* Стили для виджетов на главной странице админки */
+    .dashboard-widget {
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+    
+    .dashboard-widget-header {
+        background: var(--primary);
+        color: white;
+        padding: 15px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    
+    .dashboard-widget-content {
+        padding: 15px;
+    }
+    
+    .dashboard-widget-footer {
+        background: #f5f5f5;
+        padding: 10px 15px;
+        text-align: right;
+        border-top: 1px solid #ddd;
+    }
+    
+    .dashboard-widget-footer a {
+        color: var(--link-fg);
+        text-decoration: none;
+    }
+    
+    .dashboard-widget-footer a:hover {
+        text-decoration: underline;
+    }
+    
+    .stats-number {
+        font-size: 36px;
+        font-weight: bold;
+        color: var(--primary);
+        text-align: center;
+        margin: 10px 0;
+    }
+    
+    .stats-label {
+        text-align: center;
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .recent-actions ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .recent-actions li {
+        border-bottom: 1px solid #eee;
+        padding: 8px 0;
+    }
+    
+    .recent-actions li:last-child {
+        border-bottom: none;
+    }
+    
+    .recent-actions .action-time {
+        font-size: 12px;
+        color: #999;
+    }
+</style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <img src="{% static 'images/logo.png' %}" alt="Логотип школы">
+    {{ site_header|default:_('Администрирование школьного сайта') }}
+</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+1

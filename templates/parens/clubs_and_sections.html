@@ -1,0 +1,624 @@
+{% extends 'include/base.html' %}
+{% load static %}
+{% block title %}Секции и кружки - МОУ Размахнинская СОШ{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Секции и кружки</h1>
+    <p>Информация о внеурочной деятельности в МОУ Размахнинская СОШ</p>
+</div>
+<div class="container">
+<div class="section">
+    <div class="clubs-banner">
+        <div class="clubs-banner-content">
+            <h2>Развивайте таланты вместе с нами!</h2>
+            <p>В нашей школе работают различные кружки и секции, где каждый ребенок может найти занятие по душе и развить свои способности.</p>
+            <div class="clubs-banner-buttons">
+                <a href="#clubs-list" class="btn btn-primary">Список кружков и секций</a>
+                <a href="#enrollment" class="btn btn-outline">Как записаться</a>
+                <a href="#faq" class="btn btn-outline">Часто задаваемые вопросы</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="section" id="clubs-list">
+
+                    <div class="section-header">
+           <span class="section-badge">Кружки и секции</span>
+        </div>
+
+
+    </div>
+
+    <div class="clubs-list">
+        <h3>{{ selected_category.name }}</h3>
+
+        {% if clubs %}
+            <div class="clubs-grid">
+                {% for club in clubs %}
+                    <div class="club-card" id="{{ club.id }}">
+                        <div class="club-image">
+                            <img src="{% static club.image %}" alt="{{ club.name }}" onerror="this.src='/placeholder.svg?height=300&width=400'">
+                        </div>
+                        <div class="club-content">
+                            <h3>{{ club.name }}</h3>
+                            <div class="club-details">
+                                <p><strong>Руководитель:</strong> {{ club.instructor }}</p>
+                                <p><strong>Возраст:</strong> {{ club.age }}</p>
+                                <p><strong>Расписание:</strong> {{ club.schedule }}</p>
+                                <p><strong>Место проведения:</strong> {{ club.location }}</p>
+                            </div>
+                            <div class="club-description">
+                                <p>{{ club.description }}</p>
+                            </div>
+                            {% if club.achievements %}
+                                <div class="club-achievements">
+                                    <h4>Достижения:</h4>
+                                    <ul>
+                                        {% for achievement in club.achievements %}
+                                            <li>{{ achievement }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="clubs-empty">
+                <p>В данной категории пока нет кружков и секций.</p>
+            </div>
+        {% endif %}
+    </div>
+
+
+
+
+<div class="section" id="enrollment">
+                    <div class="section-header">
+           <span class="section-badge">Как записаться в кружок или секцию</span>
+        </div>
+
+
+    <div class="clubs-card">
+        <div class="clubs-card-header">
+            <h3>Порядок записи</h3>
+        </div>
+        <div class="clubs-card-content">
+            <div class="enrollment-steps">
+                <div class="enrollment-step">
+                    <div class="enrollment-step-number">1</div>
+                    <div class="enrollment-step-content">
+                        <h4>Выбор кружка или секции</h4>
+                        <p>Ознакомьтесь с информацией о кружках и секциях на сайте или информационном стенде школы. Выберите кружок или секцию, соответствующие интересам и возрасту ребенка.</p>
+                    </div>
+                </div>
+                <div class="enrollment-step">
+                    <div class="enrollment-step-number">2</div>
+                    <div class="enrollment-step-content">
+                        <h4>Подготовка документов</h4>
+                        <p>Подготовьте необходимые документы:</p>
+                        <ul>
+                            {% for requirement in enrollment_info.requirements %}
+                                <li>{{ requirement }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="enrollment-step">
+                    <div class="enrollment-step-number">3</div>
+                    <div class="enrollment-step-content">
+                        <h4>Подача заявления</h4>
+                        <p>Подайте заявление руководителю кружка или в администрацию школы в период с {{ enrollment_info.start_date }} по {{ enrollment_info.end_date }}.</p>
+                    </div>
+                </div>
+                <div class="enrollment-step">
+                    <div class="enrollment-step-number">4</div>
+                    <div class="enrollment-step-content">
+                        <h4>Начало занятий</h4>
+                        <p>После зачисления в кружок или секцию ребенок может приступить к занятиям согласно расписанию.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="enrollment-contact">
+                <h4>Контактная информация</h4>
+                <p><strong>Ответственное лицо:</strong> {{ enrollment_info.contact_person }}</p>
+                <p><strong>Телефон:</strong> {{ enrollment_info.contact_phone }}</p>
+                <p><strong>Email:</strong> razmahnino-sosh2014@mail.ru</p>
+            </div>
+
+            <div class="enrollment-buttons">
+                <a href="{% static 'documents/application-form2.docx' %}" class="btn btn-primary" download>
+               Скачать форму заявления
+                </a>
+                <a href="{% static 'documents/schedule.docx' %}" class="btn btn-outline" download>
+                   Скачать расписание кружков и секций
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="section">
+    <div class="clubs-cta">
+        <div class="clubs-cta-content">
+            <h2>Присоединяйтесь к нам!</h2>
+            <p>Внеурочная деятельность помогает детям раскрыть свои таланты, найти новых друзей и с пользой провести свободное время.</p>
+            <div class="clubs-cta-buttons">
+                <a href="{% url 'contact' %}" class="btn btn-primary">Связаться с нами</a>
+                <a href="#clubs-list" class="btn btn-outline">Выбрать кружок или секцию</a>
+            </div>
+        </div>
+
+    </div>
+</div></div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // FAQ accordion functionality
+        const faqItems = document.querySelectorAll('.clubs-faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.clubs-faq-question');
+            const answer = item.querySelector('.clubs-faq-answer');
+            const toggle = item.querySelector('.clubs-faq-toggle');
+
+            question.addEventListener('click', function() {
+                // Toggle current item
+                const isOpen = answer.style.display === 'block';
+                answer.style.display = isOpen ? 'none' : 'block';
+                toggle.textContent = isOpen ? '+' : '−';
+
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        const otherAnswer = otherItem.querySelector('.clubs-faq-answer');
+                        const otherToggle = otherItem.querySelector('.clubs-faq-toggle');
+                        otherAnswer.style.display = 'none';
+                        otherToggle.textContent = '+';
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .clubs-banner {
+        display: flex;
+        background-color: #f8f9fa;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        margin-bottom: 2rem;
+    }
+
+    .clubs-banner-content {
+        flex: 1;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .clubs-banner-content h2 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .clubs-banner-content p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .clubs-banner-buttons {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .clubs-banner-image {
+        flex: 1;
+        min-height: 300px;
+        position: relative;
+    }
+
+    .clubs-banner-image img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .clubs-categories {
+        margin-bottom: 2rem;
+    }
+
+    .clubs-categories h3 {
+        margin-bottom: 1rem;
+    }
+
+    .category-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .category-button {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: white;
+        border: 1px solid var(--border-color);
+        border-radius: 0.25rem;
+        color: var(--text-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .category-button:hover {
+        background-color: rgba(37, 99, 235, 0.1);
+        color: var(--primary-color);
+    }
+
+    .category-button.active {
+        background-color: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+    }
+
+    .clubs-list {
+        margin-bottom: 2rem;
+    }
+
+    .clubs-list h3 {
+        margin-bottom: 1.5rem;
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 0.5rem;
+    }
+
+    .clubs-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .club-card {
+        display: flex;
+        background-color: #f8f9fa;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+    }
+
+    .club-image {
+        flex: 1;
+        max-width: 300px;
+    }
+
+    .club-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .club-content {
+        flex: 2;
+        padding: 1.5rem;
+    }
+
+    .club-content h3 {
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .club-details {
+        margin-bottom: 1rem;
+    }
+
+    .club-details p {
+        margin-bottom: 0.5rem;
+    }
+
+    .club-description {
+        margin-bottom: 1rem;
+    }
+
+    .club-achievements {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-left: 4px solid var(--primary-color);
+    }
+
+    .club-achievements h4 {
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+    }
+
+    .club-achievements ul {
+        padding-left: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .club-achievements li {
+        margin-bottom: 0.25rem;
+    }
+
+    .clubs-empty {
+        padding: 2rem;
+        text-align: center;
+        background-color: white;
+        border-radius: 0.5rem;
+        border: 1px dashed var(--border-color);
+    }
+
+    .clubs-empty p {
+        color: var(--text-light);
+        font-style: italic;
+    }
+
+    .clubs-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .clubs-gallery-item {
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: transform 0.3s ease;
+    }
+
+    .clubs-gallery-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .clubs-gallery-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .clubs-card {
+        background-color: #f8f9fa;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        margin-bottom: 2rem;
+    }
+
+    .clubs-card-header {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 1rem 1.5rem;
+    }
+
+    .clubs-card-header h3 {
+        margin: 0;
+    }
+
+    .clubs-card-content {
+        padding: 1.5rem;
+    }
+
+    .enrollment-steps {
+        margin-bottom: 2rem;
+    }
+
+    .enrollment-step {
+        display: flex;
+        margin-bottom: 1.5rem;
+    }
+
+    .enrollment-step:last-child {
+        margin-bottom: 0;
+    }
+
+    .enrollment-step-number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        font-weight: bold;
+        margin-right: 1rem;
+        flex-shrink: 0;
+    }
+
+    .enrollment-step-content h4 {
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+    }
+
+    .enrollment-step-content p {
+        margin-bottom: 0.5rem;
+    }
+
+    .enrollment-step-content ul {
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .enrollment-step-content li {
+        margin-bottom: 0.25rem;
+    }
+
+    .enrollment-contact {
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .enrollment-contact h4 {
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+    }
+
+    .enrollment-contact p {
+        margin-bottom: 0.5rem;
+    }
+
+    .enrollment-buttons {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .clubs-faq {
+        margin-bottom: 2rem;
+    }
+
+    .clubs-faq-item {
+        margin-bottom: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+
+    .clubs-faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        background-color: #f8f9fa;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .clubs-faq-question:hover {
+        background-color: rgba(37, 99, 235, 0.05);
+    }
+
+    .clubs-faq-question h3 {
+        margin: 0;
+        font-size: 1.1rem;
+    }
+
+    .clubs-faq-toggle {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    .clubs-faq-answer {
+        display: none;
+        padding: 1rem 1.5rem;
+        background-color: white;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .clubs-faq-answer p {
+        margin: 0;
+    }
+
+    .clubs-cta {
+        display: flex;
+        background-color: #f8f9fa;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+    }
+
+    .clubs-cta-content {
+        flex: 1;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .clubs-cta-content h2 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .clubs-cta-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .clubs-cta-buttons {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .clubs-cta-image {
+        flex: 1;
+        min-height: 250px;
+        position: relative;
+    }
+
+    .clubs-cta-image img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+        .clubs-banner {
+            flex-direction: column;
+        }
+
+        .clubs-banner-image {
+            min-height: 200px;
+            position: relative;
+        }
+
+        .club-card {
+            flex-direction: column;
+        }
+
+        .club-image {
+            max-width: none;
+            height: 200px;
+        }
+
+        .clubs-cta {
+            flex-direction: column;
+        }
+
+        .clubs-cta-image {
+            min-height: 200px;
+            position: relative;
+        }
+    }
+</style>
+{% endblock %}
+

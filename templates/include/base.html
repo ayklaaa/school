@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Размахнинская СОШ{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    {% block extra_css %}{% endblock %}
+
+
+</head>
+<body>
+<header>
+
+<div class="menu-overlay" id="menuOverlay" onclick="closeMenu(event)">
+    <div class="menu-container" onclick="event.stopPropagation()">
+        <button class="close-button" onclick="toggleMenu()">&times;</button>
+{#        <ul>#}
+{##}
+{#                <li><a href="{% url 'news' %}" class="{% if 'news' in request.path %}active{% endif %}">Новости</a></li>#}
+{#                <li><a href="{% url 'info' %}" class="{% if 'info' in request.path %}active{% endif %}">Основные#}
+{#                    сведения</a></li>#}
+{##}
+{#                <li><a href="{% url 'home' %}" class="{% if 'home' in request.path %}active{% endif %}">Школьный#}
+{#                    спортивный клуб</a></li>#}
+{#                <li><a href="{% url 'contact' %}" class="{% if 'contact' in request.path %}active{% endif %}">Контакты</a>#}
+{#                </li>#}
+{#            <li><a href="#">Сведения об образовательной организации</a></li>#}
+{#            <li><a href="#">Организация питания в школе</a></li>#}
+{#            <li><a href="#">Помощь</a></li>#}
+{##}
+{#            <li><a href="#">Воспитательная работа</a></li>#}
+{#            <li><a href="#">Точка роста</a></li>#}
+{#            <li><a href="#">Набор в первый класс</a></li>#}
+{#            <li><a href="#">Наставничество</a></li>#}
+{#            <li><a href="#">Профориентация</a></li>#}
+{#            <li><a href="#">Независимая оценка качества образования</a></li>#}
+{##}
+{#            <li><a href="#">Локальные акты образовательной организации</a></li>#}
+{##}
+{##}
+{#        </ul>#}
+
+<div class="sidebar">
+    <ul>
+        <li onmouseover="showMenu('parents')">Родителям и ученикам</li>
+        <li onmouseover="showMenu('school')">Наша школа</li>
+{#        <li onmouseover="showMenu('teachers')">Педагогам и сотрудникам</li>#}
+
+{#        <li onmouseover="showMenu('tochka')">Точка роста</li>#}
+        <li onmouseover="showMenu('svedeniya')">Сведения об образовательной организации</li>
+
+        <a href="{% url 'contact' %}"><li>Контакты </a></li>
+        <a href="{% url 'food_monitoring' %}"><li>Мониторинг питания </a></li>
+        <a href="{% url 'quality_assessment' %}"><li>Независимая оценка качества образования</a></li>
+
+
+    </ul>
+</div>
+
+<div class="content-menu-r">
+    <div id="parents" class="submenu">
+        <h2>Родителям и ученикам</h2>
+        <a href="{% url 'first_grade_admission' %}">Набор в первый класс</a>
+        <a href="{% url 'news' %}">Новости</a>
+        <a href="{% url 'clubs_and_sections' %}">Секции и кружки</a>
+        <a href="{% url 'educational_work' %}">Воспитательная работа</a>
+    </div>
+
+    <div id="school" class="submenu">
+        <h2>Наша школа</h2>
+        <a href="{% url 'info' %}">Основные сведения</a>
+        <a href="{% url 'class_list' %}">Расписание</a>
+        <a href="{% url 'staff' %}">Руководство</a>
+        <a href="{% url 'material_support' %}">Материально-техническое обеспечение</a>
+    </div>
+
+    <div id="teachers" class="submenu">
+        <h2>Педагогам и сотрудникам</h2>
+        <a href="#">Методические рекомендации</a>
+        <a href="#">Повышение квалификации</a>
+        <a href="#">Вакансии</a>
+    </div>
+
+
+
+        <div id="tochka" class="submenu">
+        <h2>Точка роста</h2>
+        <a href="#">Общая информация о точке роста</a>
+        <a href="#">Педагоги</a>
+        <a href="#">Образовательные программы</a>
+        <a href="#">Документы</a>
+        <a href="#">Мероприятия</a>
+        <a href="#">Дополнительная информация</a>
+    </div>
+        <div id="svedeniya" class="submenu">
+        <h3>Сведения об образовательной организации</h3>
+        <a href="{% url 'structure' %}">Структура и органы управления</a>
+        <a href="{% url 'education' %}">Образование</a>
+        <a href="{% url 'standart' %}">Образовательные стандарты</a>
+        <a href="{% url 'staff' %}">Руководство и педагогический состав</a>
+        <a href="{% url 'material_support' %}">Материально-техническое обеспечение</a>
+        <a href="{% url 'scholarships' %}">Стипендия и меры поддержки</a>
+        <a href="{% url 'paid_services' %}">Платные образовательные услуги</a>
+        <a href="{% url 'financial' %}">Финансовая-хозяйственная деятельность</a>
+        <a href="{% url 'vacant' %}">Вакантные места для приема</a>
+        <a href="{% url 'material_support' %}#dostyp">Доступная среда</a>
+        <a href="{% url 'international' %}">Международное сотрудничество</a>
+    </div>
+
+</div>
+    </div>
+</div>
+    <div class="container">
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="">
+                <span>Размахнинская СОШ</span>
+            </a>
+        </div>
+        <nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Главная</a></li>
+                <li><a href="{% url 'news' %}" class="{% if 'news' in request.path %}active{% endif %}">Новости</a></li>
+                <li><a href="{% url 'organization_info' %}" class="{% if 'organization_info' in request.path %}active{% endif %}">Сведения об образовательной организации</a></li>
+
+
+                <li><a href="{% url 'documents' %}" class="{% if 'documents' in request.path %}active{% endif %}">Документы</a>
+                </li>
+            </ul>
+        </nav>
+<button class="menu-button" onclick="toggleMenu()"><span></span>
+                <span></span>
+                <span></span></button>
+
+{#    <div class="search-container">#}
+{#        <form class="search-form" method="get" action="/search">#}
+{#            <input class="search-input" type="search" name="search-text" placeholder="Поиск..." />#}
+{#            <button class="search-button">#}
+{#                <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Поиск">#}
+{#            </button>#}
+{#        </form>#}
+{#    </div>#}
+{##}
+
+
+    </div>
+</header>
+
+<main>
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="message {{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <div class="logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'images/logoW.png' %}" alt="Academy High School Logo">
+                        <span>МОУ "Размахнинская" СОШ</span>
+                    </a>
+                </div>
+
+
+            </div>
+            <div class="footer-links">
+                <h4>Полезные ссылки</h4>
+                <ul>
+                    <li><a href="{% url 'info' %}">О нас</a></li>
+                    <li><a href="{% url 'contact' %}">Связаться с нами</a></li>
+                    <li><a href="{% url 'first_grade_admission' %}">Набор в первый класс</a></li>
+                    <li><a href="{% url 'educational_work' %}">Воспитательная работа</a></li>
+
+                    <li><a href="{% url 'local_acts' %}">Локальные акты образовательной организации</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Наши контакты</h4>
+                <address>
+                    <p><i class="icon-map-pin"><img src="{% static 'images/map.svg' %}"></i>с. Размахнино, Школьная ул., 4</p>
+                    <p><i class="icon-phone"><img src="{% static 'images/phone.svg' %}"></i> 8 (30244) 31-5-11</p>
+                    <p><i class="icon-mail"><img src="{% static 'images/email.svg' %}"></i> razmahnino-sosh2014@mail.ru</p>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {% now "Y" %} Все права защищены.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Accessibility</a>
+            </div>
+        </div>
+    </div>
+</footer>
+{#<script src="https://cdn.userway.org/widget.js" data-account="hbSt8ea7xl"></script>#}
+<script src="{% static 'js/main.js' %}"></script>
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("menuOverlay");
+        menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+    function closeMenu(event) {
+        var menu = document.getElementById("menuOverlay");
+        if (event.target === menu) {
+            menu.style.display = "none";
+        }
+    }
+
+    function showMenu(menuId) {
+        // Скрываем все подменю
+        document.querySelectorAll('.submenu').forEach(menu => menu.classList.remove('active'));
+
+        // Показываем нужное подменю
+        document.getElementById(menuId).classList.add('active');
+    }
+
+</script>
+
+{#<a href="#" onclick="UserWay.triggerOpenAccessibility(); return false;" class="accessibility-button">#}
+{#    Версия для слабовидящих#}
+{#</a>#}
+
+
+{% block extra_js %}{% endblock %}
+
+
+
+</body>
+</html>
+

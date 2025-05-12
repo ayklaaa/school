@@ -1,0 +1,14 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>Ответ на заявку от {{ message.name }}</h1>
+<p><strong>Тема:</strong> {{ message.subject }}</p>
+<p><strong>Сообщение:</strong></p>
+<pre>{{ message.message }}</pre>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Сохранить ответ" class="default">
+</form>
+{% endblock %}

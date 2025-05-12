@@ -1,0 +1,517 @@
+{% extends 'include/base.html' %}
+{% load static %}
+{% block title %}Финансово-хозяйственная деятельность - МОУ Размахнинская СОШ{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Финансово-хозяйственная деятельность</h1>
+</div>
+<div class="container">
+
+
+<div class="section">
+
+                    <div class="section-header">
+           <span class="section-badge">План финансово-хозяйственной деятельности</span>
+        </div>
+    <div class="financial-card">
+        <p>План финансово-хозяйственной деятельности (ПФХД) - основной документ, регламентирующий финансовую деятельность образовательной организации на текущий финансовый год и плановый период.</p>
+        
+        <div class="financial-table-container">
+            <table class="financial-table">
+                <thead>
+                    <tr>
+                        <th>Наименование документа</th>
+                        <th>Период</th>
+                        <th>Дата утверждения</th>
+                        <th>Документ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>План финансово-хозяйственной деятельности</td>
+                        <td>2023 год и плановый период 2024-2025 гг.</td>
+                        <td>29.12.2022</td>
+                        <td>
+                            <a href="{% static 'documents/financial/pfhd-2023.pdf' %}" class="btn btn-outline btn-sm" download>
+                                 Скачать
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Изменения в план финансово-хозяйственной деятельности</td>
+                        <td>2023 год</td>
+                        <td>30.06.2023</td>
+                        <td>
+                            <a href="{% static 'documents/financial/pfhd-2023-changes.pdf' %}" class="btn btn-outline btn-sm" download>
+                                 Скачать
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>План финансово-хозяйственной деятельности</td>
+                        <td>2022 год и плановый период 2023-2024 гг.</td>
+                        <td>28.12.2021</td>
+                        <td>
+                            <a href="{% static 'documents/financial/pfhd-2022.pdf' %}" class="btn btn-outline btn-sm" download>
+                                 Скачать
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>План финансово-хозяйственной деятельности</td>
+                        <td>2021 год и плановый период 2022-2023 гг.</td>
+                        <td>29.12.2020</td>
+                        <td>
+                            <a href="{% static 'documents/financial/pfhd-2021.pdf' %}" class="btn btn-outline btn-sm" download>
+                                 Скачать
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+
+                    <div class="section-header">
+           <span class="section-badge">Муниципальное задание</span>
+        </div>
+    <div class="financial-card">
+        <p>Муниципальное задание - документ, устанавливающий требования к объему, качеству, составу, условиям, порядку и результатам оказания муниципальных услуг, выполнения работ, финансовое обеспечение выполнения которых осуществляется за счет средств местного бюджета.</p>
+        
+        <div class="financial-table-container">
+            <table class="financial-table">
+                <thead>
+                    <tr>
+                        <th>Наименование документа</th>
+                        <th>Период</th>
+                        <th>Дата утверждения</th>
+                        <th>Документ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Муниципальное задание</td>
+                        <td>2023 год и плановый период 2024-2025 гг.</td>
+                        <td>20.12.2022</td>
+                        <td>
+                            <a href="{% static 'documents/financial/municipal-task-2023.pdf' %}" class="btn btn-outline btn-sm" download>
+                                 Скачать
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Отчет о выполнении муниципального задания</td>
+                        <td>1 полугодие 2023 года</td>
+                        <td>15.07.2023</td>
+                        <td>
+                            <a href="{% static 'documents/financial/municipal-task-report-1h-2023.pdf' %}" class="btn btn-outline btn-sm" download>
+                                 Скачать
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Муниципальное задание</td>
+                        <td>2022 год и плановый период 2023-2024 гг.</td>
+                        <td>21.12.2021</td>
+                        <td>
+                            <a href="{% static 'documents/financial/municipal-task-2022.pdf' %}" class="btn btn-outline btn-sm" download>
+                                 Скачать
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Отчет о выполнении муниципального задания</td>
+                        <td>2022 год</td>
+                        <td>25.01.2023</td>
+                        <td>
+                            <a href="{% static 'documents/financial/municipal-task-report-2022.pdf' %}" class="btn btn-outline btn-sm" download>
+                                 Скачать
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{##}
+{#<div class="section">#}
+{#    <h2>Отчеты об исполнении бюджета</h2>#}
+{#    #}
+{#    <div class="financial-card">#}
+{#        <div class="financial-table-container">#}
+{#            <table class="financial-table">#}
+{#                <thead>#}
+{#                    <tr>#}
+{#                        <th>Наименование документа</th>#}
+{#                        <th>Период</th>#}
+{#                        <th>Дата составления</th>#}
+{#                        <th>Документ</th>#}
+{#                    </tr>#}
+{#                </thead>#}
+{#                <tbody>#}
+{#                    <tr>#}
+{#                        <td>Отчет об исполнении учреждением плана его финансово-хозяйственной деятельности (форма 0503737)</td>#}
+{#                        <td>2022 год</td>#}
+{#                        <td>01.02.2023</td>#}
+{#                        <td>#}
+{#                            <a href="{% static 'documents/financial/report-0503737-2022.pdf' %}" class="btn btn-outline btn-sm" download>#}
+{#                                <i class="icon-download"></i> Скачать#}
+{#                            </a>#}
+{#                        </td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>Баланс государственного (муниципального) учреждения (форма 0503730)</td>#}
+{#                        <td>2022 год</td>#}
+{#                        <td>01.02.2023</td>#}
+{#                        <td>#}
+{#                            <a href="{% static 'documents/financial/report-0503730-2022.pdf' %}" class="btn btn-outline btn-sm" download>#}
+{#                                <i class="icon-download"></i> Скачать#}
+{#                            </a>#}
+{#                        </td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>Отчет о финансовых результатах деятельности учреждения (форма 0503721)</td>#}
+{#                        <td>2022 год</td>#}
+{#                        <td>01.02.2023</td>#}
+{#                        <td>#}
+{#                            <a href="{% static 'documents/financial/report-0503721-2022.pdf' %}" class="btn btn-outline btn-sm" download>#}
+{#                                <i class="icon-download"></i> Скачать#}
+{#                            </a>#}
+{#                        </td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>Отчет об исполнении учреждением плана его финансово-хозяйственной деятельности (форма 0503737)</td>#}
+{#                        <td>2021 год</td>#}
+{#                        <td>01.02.2022</td>#}
+{#                        <td>#}
+{#                            <a href="{% static 'documents/financial/report-0503737-2021.pdf' %}" class="btn btn-outline btn-sm" download>#}
+{#                                <i class="icon-download"></i> Скачать#}
+{#                            </a>#}
+{#                        </td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>Баланс государственного (муниципального) учреждения (форма 0503730)</td>#}
+{#                        <td>2021 год</td>#}
+{#                        <td>01.02.2022</td>#}
+{#                        <td>#}
+{#                            <a href="{% static 'documents/financial/report-0503730-2021.pdf' %}" class="btn btn-outline btn-sm" download>#}
+{#                                <i class="icon-download"></i> Скачать#}
+{#                            </a>#}
+{#                        </td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>Отчет о финансовых результатах деятельности учреждения (форма 0503721)</td>#}
+{#                        <td>2021 год</td>#}
+{#                        <td>01.02.2022</td>#}
+{#                        <td>#}
+{#                            <a href="{% static 'documents/financial/report-0503721-2021.pdf' %}" class="btn btn-outline btn-sm" download>#}
+{#                                <i class="icon-download"></i> Скачать#}
+{#                            </a>#}
+{#                        </td>#}
+{#                    </tr>#}
+{#                </tbody>#}
+{#            </table>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+
+
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Диаграмма поступления финансовых средств
+        const incomeCtx = document.getElementById('incomeChart').getContext('2d');
+        const incomeChart = new Chart(incomeCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Федеральный бюджет', 'Региональный бюджет', 'Муниципальный бюджет', 'Внебюджетные средства'],
+                datasets: [{
+                    data: [12500000, 18700000, 8300000, 1500000],
+                    backgroundColor: [
+                        '#4e73df',
+                        '#1cc88a',
+                        '#36b9cc',
+                        '#f6c23e'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                const value = context.raw;
+                                label += new Intl.NumberFormat('ru-RU').format(value) + ' руб.';
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Диаграмма расходования финансовых средств
+        const expensesCtx = document.getElementById('expensesChart').getContext('2d');
+        const expensesChart = new Chart(expensesCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Оплата труда и начисления', 'Коммунальные услуги', 'Содержание имущества', 'Приобретение оборудования', 'Прочие расходы'],
+                datasets: [{
+                    data: [28700000, 4500000, 2800000, 3200000, 1800000],
+                    backgroundColor: [
+                        '#4e73df',
+                        '#1cc88a',
+                        '#36b9cc',
+                        '#f6c23e',
+                        '#e74a3b'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                const value = context.raw;
+                                label += new Intl.NumberFormat('ru-RU').format(value) + ' руб.';
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .financial-card {
+        background-color: #f8f9fa;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: var(--box-shadow);
+    }
+    
+    .financial-highlights {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .financial-highlight-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .financial-highlight-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(37, 99, 235, 0.1);
+        color: var(--primary-color);
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+    
+    .financial-highlight-content h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .financial-highlight-content p {
+        margin: 0;
+        margin-bottom: 0.25rem;
+        color: var(--text-light);
+    }
+    
+    .financial-table-container {
+        overflow-x: auto;
+        margin: 1.5rem 0;
+    }
+    
+    .financial-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .financial-table th,
+    .financial-table td {
+        padding: 0.75rem;
+        text-align: left;
+        border: 1px solid var(--border-color);
+    }
+    
+    .financial-table th {
+        background-color: var(--primary-color);
+        color: white;
+    }
+    
+    .financial-table tr:nth-child(even) {
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    .financial-table tr:hover {
+        background-color: rgba(37, 99, 235, 0.05);
+    }
+    
+    .financial-list {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin-bottom: 0;
+    }
+    
+    .financial-list li {
+        margin-bottom: 0.25rem;
+    }
+    
+    .financial-chart-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .financial-chart {
+        background-color: white;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .financial-chart-legend {
+        background-color: white;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .chart-color {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+        vertical-align: middle;
+    }
+    
+    .document-download {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .financial-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+    
+    .financial-link-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        color: var(--text-color);
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .financial-link-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        color: var(--primary-color);
+    }
+    
+    .financial-link-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(37, 99, 235, 0.1);
+        color: var(--primary-color);
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+    
+    .financial-link-content h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .financial-link-content p {
+        margin: 0;
+        color: var(--text-light);
+        font-size: 0.9rem;
+    }
+    
+    .btn-sm {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.875rem;
+    }
+    
+    @media (max-width: 768px) {
+        .financial-chart-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .financial-table th,
+        .financial-table td {
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .document-download {
+            flex-direction: column;
+        }
+    }
+</style>
+{% endblock %}
+

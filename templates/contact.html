@@ -1,0 +1,164 @@
+{% extends 'include/base.html' %}
+{% load static %}
+{% block title %}Contact Us - Academy High School{% endblock %}
+
+{% block content %}
+    <section class="page-header">
+        <div class="container">
+            <h1>Наши контакты</h1>
+
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="icon-map-pin"><img src="{% static 'images/map.svg' %}" alt=""></i>
+                        </div>
+                        <h3>Адрес</h3>
+                        <p>Забайкальский край, Шилкинский р-он <br>с. Размахнино ул. Школьная, 4</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="icon-phone"><img src="{% static 'images/phone.svg' %}" alt=""></i>
+                        </div>
+                        <h3>Номер телефона</h3>
+                        <p> 8 (30244) 31-5-11</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="icon-mail"><img src="{% static 'images/email.svg' %}" alt=""></i>
+                        </div>
+                        <h3>Электронная почта</h3>
+                        <p>razmahnino-sosh2014@mail.ru</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="icon-clock"><img src="{% static 'images/clock.svg' %}" alt=""></i>
+                        </div>
+                        <h3>Часы работы</h3>
+                        <p>Понедельник - Пятница: 8:00 - 17:30 PM<br>Суббота - Воскресенье: Закрыто</p>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <h2>Отправьте заявку</h2>
+                    <form method="post" class="contact-form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="{{ form.name.id_for_label }}">Ваше имя</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="{{ form.name.id_for_label }}"
+                                   name="{{ form.name.name }}"
+                                   placeholder="Ваше имя"
+                                   value="{{ form.name.value|default_if_none:'' }}">
+                            {% if form.name.errors %}
+                                <div class="form-error">{{ form.name.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.email.id_for_label }}">Адрес электронной почты</label>
+                            <input type="email"
+                                   class="form-control"
+                                   id="{{ form.email.id_for_label }}"
+                                   name="{{ form.email.name }}"
+                                   placeholder="Введите адрес электронной почты"
+                                   value="{{ form.email.value|default_if_none:'' }}"
+                                   required>
+                            {% if form.email.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.subject.id_for_label }}">Тема обращения</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="{{ form.subject.id_for_label }}"
+                                   name="{{ form.subject.name }}"
+                                   placeholder="Укажите тему вашего обращения"
+                                   value="{{ form.subject.value|default_if_none:'' }}"
+                                   required>
+                            {% if form.subject.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.subject.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div><div class="form-group">
+    <label for="{{ form.message.id_for_label }}">Сообщение</label>
+    <textarea class="form-control" 
+              id="{{ form.message.id_for_label }}"
+              name="{{ form.message.name }}"
+              placeholder="Опишите подробно ваше обращение"
+              rows="5"
+              required>{{ form.message.value|default_if_none:'' }}</textarea>
+    {% if form.message.errors %}
+        <div class="invalid-feedback">
+            {% for error in form.message.errors %}
+                {{ error }}
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Интерактивная карта</span>
+            </div>
+            <div class="map-container">
+                <div style="position:relative;overflow:hidden;"><a
+                        href="https://yandex.ru/maps/org/razmakhninskaya_srednyaya_obshcheobrazovatelnaya_shkola/58867358160/?utm_medium=mapframe&utm_source=maps"
+                        style="color:#eee;font-size:12px;position:absolute;top:0px;">Размахнинская средняя
+                    общеобразовательная школа</a><a
+                        href="https://yandex.ru/maps/21949/zabaykalsky-krai/category/school/184106240/?utm_medium=mapframe&utm_source=maps"
+                        style="color:#eee;font-size:12px;position:absolute;top:14px;">Общеобразовательная школа в
+                    Забайкальском крае</a>
+                    <iframe src="https://yandex.ru/map-widget/v1/org/razmakhninskaya_srednyaya_obshcheobrazovatelnaya_shkola/58867358160/?ll=115.483702%2C51.776730&z=18.85"
+                            width="1160" height="400" frameborder="1" allowfullscreen="true"
+                            style="position:relative;"></iframe>
+                </div>
+                <!-- Map iframe would go here in production -->
+
+            </div>
+        </div>
+    </section>
+    <style>
+    .icon-clock, .icon-map-pin, .icon-mail, .icon-phone {
+        width: 25px;
+        display: flex;
+    }
+       .icon-map-pin img{
+        width: 25px;
+        display: flex;
+    }
+
+.contact-icon img{
+    width: 25px;
+}
+.footer-contact img{
+    width: 16px;
+    height: 16px;
+}
+    @media (max-width: 750px) {
+.map-section{
+    display: flex;
+    max-width: 700px;
+}}
+</style>
+{% endblock %}
+

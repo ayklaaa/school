@@ -1,0 +1,788 @@
+{% extends 'include/base.html' %}
+{% load static %}
+{% block title %}Образование - МОУ Размахнинская СОШ{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Образование</h1>
+
+    </div>
+</section>
+<div class="container">
+{#<div class="section">#}
+{#    <h2>Общая информация</h2>#}
+{#    <div class="education-card">#}
+{#        <div class="education-grid">#}
+{#            <div class="education-item">#}
+{#                <h3>Уровни образования</h3>#}
+{#                <ul class="education-list">#}
+{#                    <li>Начальное общее образование (1-4 классы)</li>#}
+{#                    <li>Основное общее образование (5-9 классы)</li>#}
+{#                    <li>Среднее общее образование (10-11 классы)</li>#}
+{#                </ul>#}
+{#            </div>#}
+{#            #}
+{##}
+{#            #}
+{#            <div class="education-item">#}
+{#                <h3>Нормативные сроки обучения</h3>#}
+{#                <ul class="education-list">#}
+{#                    <li>Начальное общее образование - 4 года</li>#}
+{#                    <li>Основное общее образование - 5 лет</li>#}
+{#                    <li>Среднее общее образование - 2 года</li>#}
+{#                </ul>#}
+{#            </div>#}
+{#            #}
+{#            <div class="education-item">#}
+{#                <h3>Язык обучения</h3>#}
+{#                <p>Обучение и воспитание в школе ведется на русском языке.</p>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+<div class="education-programs">
+    <div class="container">
+        <div class="section-header">
+           <span class="section-badge">Образовательные программы</span>
+        </div>
+        <div class="education-tabs">
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-tab="elementary">Начальное общее образование</button>
+                <button class="tab-btn" data-tab="basic">Основное общее образование</button>
+                <button class="tab-btn" data-tab="secondary">Среднее общее образование</button>
+                <button class="tab-btn" data-tab="additional">Дополнительное образование</button>
+            </div>
+            <div class="tabs-content">
+                <!-- Начальное общее образование -->
+                <div class="tab-pane active" id="elementary">
+                    <div class="education-card">
+                        <h3>Основная образовательная программа начального общего образования</h3>
+                        <p>Программа разработана в соответствии с требованиями федерального государственного образовательного стандарта начального общего образования.</p>
+                        <div class="document-download">
+                            <a href="{% static 'documents/elementary-program.pdf' %}" class="btn btn-primary" download>
+                                Скачать программу (PDF)
+                            </a>
+                        </div>
+                        <div class="education-details">
+                            <div class="education-detail-item">
+                                <h4>Срок действия государственной аккредитации</h4>
+                                <p>до 31 декабря 2025 года</p>
+                            </div>
+                            <div class="education-detail-item">
+                                <h4>Количество обучающихся</h4>
+                                <p>120 человек</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-card">
+                        <h3>Адаптированная основная образовательная программа начального общего образования</h3>
+                        <p>Программа разработана для обучающихся с ограниченными возможностями здоровья.</p>
+                        <div class="document-download">
+                            <a href="{% static 'documents/elementary-adapted-program.pdf' %}" class="btn btn-primary" download>
+                                 Скачать программу (PDF)
+                            </a>
+                        </div>
+                        <div class="education-details">
+                            <div class="education-detail-item">
+                                <h4>Срок действия государственной аккредитации</h4>
+                                <p>до 31 декабря 2025 года</p>
+                            </div>
+                            <div class="education-detail-item">
+                                <h4>Количество обучающихся</h4>
+                                <p>5 человек</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Основное общее образование -->
+                <div class="tab-pane" id="basic">
+                    <div class="education-card">
+                        <h3>Основная образовательная программа основного общего образования</h3>
+                        <p>Программа разработана в соответствии с требованиями федерального государственного образовательного стандарта основного общего образования.</p>
+                        <div class="document-download">
+                            <a href="{% static 'documents/basic-program.pdf' %}" class="btn btn-primary" download>
+                                Скачать программу (PDF)
+                            </a>
+                        </div>
+                        <div class="education-details">
+                            <div class="education-detail-item">
+                                <h4>Срок действия государственной аккредитации</h4>
+                                <p>до 31 декабря 2025 года</p>
+                            </div>
+                            <div class="education-detail-item">
+                                <h4>Количество обучающихся</h4>
+                                <p>150 человек</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-card">
+                        <h3>Адаптированная основная образовательная программа основного общего образования</h3>
+                        <p>Программа разработана для обучающихся с ограниченными возможностями здоровья.</p>
+                        <div class="document-download">
+                            <a href="{% static 'documents/basic-adapted-program.pdf' %}" class="btn btn-primary" download>
+                                Скачать программу (PDF)
+                            </a>
+                        </div>
+                        <div class="education-details">
+                            <div class="education-detail-item">
+                                <h4>Срок действия государственной аккредитации</h4>
+                                <p>до 31 декабря 2025 года</p>
+                            </div>
+                            <div class="education-detail-item">
+                                <h4>Количество обучающихся</h4>
+                                <p>7 человек</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Среднее общее образование -->
+                <div class="tab-pane" id="secondary">
+                    <div class="education-card">
+                        <h3>Основная образовательная программа среднего общего образования</h3>
+                        <p>Программа разработана в соответствии с требованиями федерального государственного образовательного стандарта среднего общего образования.</p>
+                        <div class="document-download">
+                            <a href="{% static 'documents/secondary-program.pdf' %}" class="btn btn-primary" download>
+                                 Скачать программу (PDF)
+                            </a>
+                        </div>
+                        <div class="education-details">
+                            <div class="education-detail-item">
+                                <h4>Срок действия государственной аккредитации</h4>
+                                <p>до 31 декабря 2025 года</p>
+                            </div>
+                            <div class="education-detail-item">
+                                <h4>Количество обучающихся</h4>
+                                <p>45 человек</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Дополнительное образование -->
+                <div class="tab-pane" id="additional">
+                    <div class="education-card">
+                        <h3>Дополнительные общеразвивающие программы</h3>
+                        <p>В школе реализуются дополнительные общеразвивающие программы по следующим направлениям:</p>
+                        <ul class="education-list">
+                            <li>Художественно-эстетическое</li>
+                            <li>Физкультурно-спортивное</li>
+                            <li>Техническое</li>
+                            <li>Естественнонаучное</li>
+                            <li>Социально-педагогическое</li>
+                        </ul>
+                        <div class="document-download">
+                            <a href="{% static 'documents/additional-programs.pdf' %}" class="btn btn-primary" download>
+                                 Скачать перечень программ (PDF)
+                            </a>
+                        </div>
+                        <div class="education-details">
+                            <div class="education-detail-item">
+                                <h4>Количество обучающихся</h4>
+                                <p>180 человек</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+        <div class="section-header">
+           <span class="section-badge">Календарный учебный график</span>
+        </div>
+
+<div class="section">
+
+    
+    <div class="education-card">
+        <h3>Календарный учебный график на 2024-2025 учебный год</h3>
+        
+        <div class="calendar-highlights">
+            <div class="calendar-highlight-item">
+
+                <div class="calendar-highlight-content">
+                    <h4>Начало учебного года</h4>
+                    <p>1 сентября 2024 года</p>
+                </div>
+            </div>
+            
+            <div class="calendar-highlight-item">
+
+                <div class="calendar-highlight-content">
+                    <h4>Окончание учебного года</h4>
+                    <p>31 мая 2025 года (1-8, 10 классы)</p>
+                    <p>25 мая 2025 года (9, 11 классы)</p>
+                </div>
+            </div>
+            
+            <div class="calendar-highlight-item">
+
+                <div class="calendar-highlight-content">
+                    <h4>Продолжительность учебного года</h4>
+                    <p>1 класс - 33 недели</p>
+                    <p>2-11 классы - 34 недели</p>
+                </div>
+            </div>
+            
+            <div class="calendar-highlight-item">
+
+                <div class="calendar-highlight-content">
+                    <h4>Учебные периоды</h4>
+                    <p>1-9 классы - четверти</p>
+                    <p>10-11 классы - полугодия</p>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="education-table-container">
+            <table class="education-table">
+                <thead>
+                    <tr>
+                        <th>Каникулы</th>
+                        <th>Сроки</th>
+                        <th>Продолжительность</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Осенние</td>
+                        <td>30.10.2024 - 06.11.2024</td>
+                        <td>8 дней</td>
+                    </tr>
+                    <tr>
+                        <td>Зимние</td>
+                        <td>28.12.2024 - 10.01.2025</td>
+                        <td>14 дней</td>
+                    </tr>
+                    <tr>
+                        <td>Дополнительные (1 класс)</td>
+                        <td>19.02.2025 - 25.02.2025</td>
+                        <td>7 дней</td>
+                    </tr>
+                    <tr>
+                        <td>Весенние</td>
+                        <td>25.03.2025 - 31.03.2025</td>
+                        <td>7 дней</td>
+                    </tr>
+                    <tr>
+                        <td>Летние</td>
+                        <td>01.06.2025 - 31.08.2025</td>
+                        <td>92 дня</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="document-download">
+            <a href="{% static 'documents/calendar-2023-2024.pdf' %}" class="btn btn-primary" download>
+                Скачать календарный учебный график (PDF)
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+        <div class="section-header">
+           <span class="section-badge">Рабочие программы</span>
+        </div>
+    
+    <div class="tabs-container">
+        <div class="tabs-nav">
+            <button class="tab-btn active" data-tab="elementary-programs">Начальное общее образование</button>
+            <button class="tab-btn" data-tab="basic-programs">Основное общее образование</button>
+            <button class="tab-btn" data-tab="secondary-programs">Среднее общее образование</button>
+        </div>
+        
+        <div class="tabs-content">
+            <!-- Начальное общее образование -->
+            <div class="tab-pane active" id="elementary-programs">
+                <div class="education-card">
+                    <div class="education-table-container">
+                        <table class="education-table">
+                            <thead>
+                                <tr>
+                                    <th>Предмет</th>
+                                    <th>Класс</th>
+                                    <th>Рабочая программа</th>
+                                    <th>Аннотация</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Русский язык</td>
+                                    <td>1-4</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/elementary-russian.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/elementary-russian.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Литературное чтение</td>
+                                    <td>1-4</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/elementary-literature.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/elementary-literature.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Математика</td>
+                                    <td>1-4</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/elementary-math.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/elementary-math.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Окружающий мир</td>
+                                    <td>1-4</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/elementary-world.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/elementary-world.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Технология</td>
+                                    <td>1-4</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/elementary-technology.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/elementary-technology.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Основное общее образование -->
+            <div class="tab-pane" id="basic-programs">
+                <div class="education-card">
+                    <div class="education-table-container">
+                        <table class="education-table">
+                            <thead>
+                                <tr>
+                                    <th>Предмет</th>
+                                    <th>Класс</th>
+                                    <th>Рабочая программа</th>
+                                    <th>Аннотация</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Русский язык</td>
+                                    <td>5-9</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/basic-russian.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/basic-russian.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Литература</td>
+                                    <td>5-9</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/basic-literature.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/basic-literature.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Математика</td>
+                                    <td>5-6</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/basic-math-5-6.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/basic-math-5-6.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Алгебра</td>
+                                    <td>7-9</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/basic-algebra.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/basic-algebra.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Геометрия</td>
+                                    <td>7-9</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/basic-geometry.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/basic-geometry.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Среднее общее образование -->
+            <div class="tab-pane" id="secondary-programs">
+                <div class="education-card">
+                    <div class="education-table-container">
+                        <table class="education-table">
+                            <thead>
+                                <tr>
+                                    <th>Предмет</th>
+                                    <th>Класс</th>
+                                    <th>Рабочая программа</th>
+                                    <th>Аннотация</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Русский язык</td>
+                                    <td>10-11</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/secondary-russian.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/secondary-russian.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Литература</td>
+                                    <td>10-11</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/secondary-literature.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/secondary-literature.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Математика</td>
+                                    <td>10-11</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/secondary-math.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/secondary-math.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Физика</td>
+                                    <td>10-11</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/secondary-physics.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/secondary-physics.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Химия</td>
+                                    <td>10-11</td>
+                                    <td>
+                                        <a href="{% static 'documents/programs/secondary-chemistry.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% static 'documents/annotations/secondary-chemistry.pdf' %}" class="btn btn-outline btn-sm" download>
+                                             Скачать
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tabs functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                const tabContainer = this.closest('.tabs-container');
+                const tabPanes = tabContainer.querySelectorAll('.tab-pane');
+                const tabButtons = tabContainer.querySelectorAll('.tab-btn');
+                
+                // Remove active class from all buttons and panes in this container
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+                
+                // Add active class to current button and pane
+                this.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    });
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .education-card {
+        background-color: #f8f9fa;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+
+        box-shadow: var(--box-shadow);
+    }
+    
+    .education-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .education-item h3 {
+        color: var(--primary-color);
+        margin-bottom: 0.75rem;
+        font-size: 1.1rem;
+    }
+    
+    .education-list {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin-bottom: 0;
+    }
+    
+    .education-list li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .tabs-container {
+        margin: 1.5rem 0;
+    }
+    
+
+    .tab-btn {
+        background: none;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-weight: 500;
+        color: var(--text-color);
+        border-radius: 0.25rem;
+        transition: all 0.3s ease;
+    }
+    
+.section{
+    margin: 0;
+}
+    
+.education-programs{
+    margin-top: 30px;
+}
+    
+    .tab-pane {
+        display: none;
+    }
+    
+    .tab-pane.active {
+        display: block;
+    }
+    
+    .document-download {
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+    
+    .education-details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-color);
+    }
+    
+    .education-detail-item h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-light);
+    }
+    
+    .education-detail-item p {
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+    
+    .education-table-container {
+        overflow-x: auto;
+
+    }
+    
+    .education-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .education-table th,
+    .education-table td {
+        padding: 0.75rem;
+        text-align: left;
+        border: 1px solid var(--border-color);
+    }
+    
+    .education-table th {
+        background-color: var(--primary-color);
+        color: white;
+    }
+    
+    .education-table tr:nth-child(even) {
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    .education-table tr:hover {
+        background-color: rgba(37, 99, 235, 0.05);
+    }
+    
+    .calendar-highlights {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .calendar-highlight-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .calendar-highlight-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(37, 99, 235, 0.1);
+        color: var(--primary-color);
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+    
+    .calendar-highlight-content h4 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+
+    
+    .calendar-highlight-content p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--text-light);
+    }
+    
+    .btn-sm {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.875rem;
+    }
+    
+    @media (max-width: 768px) {
+        .tabs-nav {
+            overflow-x: auto;
+            padding-bottom: 0.75rem;
+        }
+        
+        .tab-btn {
+            white-space: nowrap;
+        }
+        
+        .education-table th,
+        .education-table td {
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+    }
+</style>
+{% endblock %}
+

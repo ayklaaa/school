@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список учителей</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Список учителей</h1>
+    <ul>
+        {% for teacher in teachers %}
+        <li>
+            <a href="{% url 'teacher_schedule' teacher.id %}">{{ teacher.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

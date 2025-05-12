@@ -1,0 +1,874 @@
+{% extends 'include/base.html' %}
+{% load static %}
+
+{% block title %}Вакантные места для приема (перевода) - МОУ Размахнинская СОШ{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <h1 >Вакантные места для приема (перевода)</h1>
+    <div >Информация о количестве вакантных мест для приема (перевода) обучающихся</div>
+</section>
+
+<div class="container">
+    <div class="section" id="services">
+        <!-- Вакантные места -->
+                                      <div class="section-header">
+           <span class="section-badge">Вакантные места на 2024-2025 учебный год</span>
+        </div>
+        <div class="admission-card">
+
+
+            <div class="admission-card-content">
+                <p class="admission-important">Информация о количестве вакантных мест по состоянию на 01.05.2024</p>
+
+                <div class="table-responsive">
+                    <table class="admission-table">
+                        <thead>
+                            <tr>
+                                <th>Класс</th>
+                                <th>Количество классов</th>
+                                <th>Количество обучающихся</th>
+                                <th>Количество вакантных мест</th>
+                            </tr>
+                        </thead>
+<tbody>
+                        <tr>
+                            <td>1 класс</td>
+                            <td>1</td>
+                            <td>20</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>2 класс</td>
+                            <td>1</td>
+                            <td>18</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3 класс</td>
+                            <td>1</td>
+                            <td>12</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>4 класс</td>
+                            <td>1</td>
+                            <td>16</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>5 класс</td>
+                            <td>1</td>
+                            <td>15</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>6 класс</td>
+                            <td>1</td>
+                            <td>18</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>7 класс</td>
+                            <td>1</td>
+                            <td>19</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>8 класс</td>
+                            <td>1</td>
+                            <td>12</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>9 класс</td>
+                            <td>1</td>
+                            <td>17</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>10 класс</td>
+                            <td>1</td>
+                            <td>8</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>11 класс</td>
+                            <td>1</td>
+                            <td>6</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Правила приема -->
+                          <div class="section-header">
+           <span class="section-badge">Правила приема в школу</span>
+        </div>
+ <div class="admission-card">
+
+        <div class="admission-card-content">
+            <p>Прием в школу осуществляется в соответствии с Федеральным законом от 29.12.2012 № 273-ФЗ «Об образовании в Российской Федерации» и Порядком приема на обучение по образовательным программам начального общего, основного общего и среднего общего образования.</p>
+
+            <h3 class="admission-subheader">Необходимые документы:</h3>
+            <ul class="admission-list">
+                <li>Заявление родителей (законных представителей)</li>
+                <li>Копия свидетельства о рождении ребенка</li>
+                <li>Копия документа, удостоверяющего личность родителя (законного представителя)</li>
+                <li>Копия свидетельства о регистрации ребенка по месту жительства</li>
+                <li>Личное дело обучающегося (при переводе из другой образовательной организации)</li>
+                <li>Аттестат об основном общем образовании (при приеме в 10-11 классы)</li>
+            </ul>
+
+            <div class="admission-buttons">
+                <a href="{% static 'documents/blank-zayavlenie-o-perevode-v-drugoi-klass.docx' %}" class="admission-button">Скачать форму заявления</a>
+                <a href="{% static 'documents/Prikaz_Minprosvescheniya_Rossii_ot_02_09_2020_N_458.pdf' %}" class="admission-button">Положение о правилах приема</a>
+            </div>
+        </div>
+    </div>
+<div class="section" id="admission-process">
+
+                    <div class="section-header">
+           <span class="section-badge">Этапы приема в школу</span>
+        </div>
+    <div class="admission-card">
+        <div class="admission-card-header">
+            <h3>Сроки приема заявлений</h3>
+        </div>
+        <div class="admission-card-content">
+            <div class="admission-timeline">
+                <div class="admission-timeline-item">
+                    <div class="admission-timeline-point"></div>
+                    <div class="admission-timeline-content">
+                        <h4>Прием заявлений в первый класс для детей, проживающих на закрепленной территории</h4>
+                        <p><strong>1 апреля - 30 июня</strong></p>
+                        <p>В этот период принимаются заявления от родителей (законных представителей) детей, проживающих на территории, закрепленной за школой.</p>
+                    </div>
+                </div>
+                <div class="admission-timeline-item">
+                    <div class="admission-timeline-point"></div>
+                    <div class="admission-timeline-content">
+                        <h4>Прием заявлений в первый класс для детей, не проживающих на закрепленной территории</h4>
+                        <p><strong>6 июля - 5 сентября</strong></p>
+                        <p>В этот период принимаются заявления от родителей (законных представителей) детей, не проживающих на территории, закрепленной за школой, при наличии свободных мест.</p>
+                    </div>
+                </div>
+                <div class="admission-timeline-item">
+                    <div class="admission-timeline-point"></div>
+                    <div class="admission-timeline-content">
+                        <h4>Прием заявлений для перевода из других образовательных организаций</h4>
+                        <p><strong>В течение учебного года</strong></p>
+                        <p>Прием заявлений для перевода из других образовательных организаций осуществляется при наличии свободных мест.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+                         <div class="section-header">
+           <span class="section-badge">Часто задаваемые вопросы</span>
+        </div>
+   <div class="management-card">
+
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Как узнать, закреплена ли наша территория за вашей школой?</h4>
+                            <span class="accordion-icon"></span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Информацию о закрепленной территории можно получить на официальном сайте школы в разделе "Документы" или в администрации школы. Также можно обратиться в управление образования вашего района.</p>
+
+                            <div class="document-download">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Можно ли подать заявление онлайн?</h4>
+                            <span class="accordion-icon"></span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Да, заявление можно подать через портал Госуслуг или региональный портал образовательных услуг. После подачи заявления онлайн необходимо в течение 7 рабочих дней предоставить оригиналы документов в школу.</p>
+
+                            <div class="document-download">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Что делать, если в желаемом классе нет свободных мест?</h4>
+                            <span class="accordion-icon"></span>
+                        </div>
+                        <div class="accordion-content">
+                                           <p>В случае отсутствия свободных мест в желаемом классе, вы можете обратиться в управление образования вашего района для получения информации о наличии свободных мест в других образовательных организациях.</p>
+
+
+                            <div class="document-download">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+    </div>
+    <div class="education-card food-cta">
+        <div class="food-cta-content">
+            <h2>Остались вопросы?</h2>
+            <p>Если у вас остались вопросы, вы можете связаться с нами по телефону или электронной почте.</p>
+            <div class="food-cta-buttons">
+                <a href="{% url 'contact' %}" class="btn btn-primary">Связаться с нами</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+    <style>
+    .education-card {
+        background-color: #f8f9fa;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: var(--box-shadow);
+    }
+
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .section-header h2 {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .tabs-nav {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        background: none;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-weight: 500;
+        color: var(--text-color);
+        border-radius: 0.25rem;
+        transition: all 0.3s ease;
+
+    }
+
+
+
+    .tab-pane {
+        display: none;
+    }
+
+    .tab-pane.active {
+        display: block;
+    }
+
+    .document-download {
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+
+    .education-details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .education-detail-item h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-light);
+    }
+
+    .education-detail-item p {
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+
+    .education-table-container {
+        overflow-x: auto;
+        margin: 1.5rem 0;
+    }
+
+    .education-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .education-table th,
+    .education-table td {
+        padding: 0.75rem;
+        text-align: left;
+        border: 1px solid var(--border-color);
+    }
+
+    .education-table th {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .education-table tr:nth-child(even) {
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    .education-table tr:hover {
+        background-color: rgba(37, 99, 235, 0.05);
+    }
+
+    .calendar-highlights {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .calendar-highlight-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .calendar-highlight-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(37, 99, 235, 0.1);
+        color: var(--primary-color);
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .calendar-highlight-content h4 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .calendar-highlight-content p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--text-light);
+    }
+
+    .btn-sm {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    .week-menu {
+        margin-bottom: 2rem;
+    }
+
+    .week-menu h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .menu-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .food-cta {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 2rem;
+    }
+
+    .food-cta h2 {
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .food-cta p {
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+    }
+
+    .food-cta-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .food-cta .btn-outline {
+        border-color: white;
+        color: white;
+    }
+
+    .food-cta .btn-outline:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .no-data {
+        color: #e74c3c;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .tabs-nav {
+            overflow-x: auto;
+            padding-bottom: 0.75rem;
+        }
+
+        .tab-btn {
+            white-space: nowrap;
+        }
+
+        .education-table th,
+        .education-table td {
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .food-cta {
+            padding: 1.5rem;
+        }
+    }
+</style>
+<style>
+    /* Основные стили */
+    .admission-title {
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .admission-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+    }
+
+    /* Карточки */
+    .admission-card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        margin-bottom: 2rem;
+        overflow: hidden;
+    }
+
+    .admission-card-header {
+        background: var(--primary-color);
+        padding: 1.5rem;
+        color: white;
+    }
+
+    .admission-card-header h2 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    .admission-card-content {
+        padding: 2rem;
+    }
+
+    /* Таблица */
+    .admission-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+    }
+
+    .admission-table th,
+    .admission-table td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid var(--border-color);
+    }
+
+    .admission-table thead {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .admission-table tbody tr:nth-child(even) {
+        background: #f8f9fa;
+    }
+
+    /* Списки */
+    .admission-list {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+    }
+
+    .admission-list li {
+        padding: 0.5rem 0;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .admission-list li:before {
+        content: "•";
+        color: var(--primary-color);
+        position: absolute;
+        left: 0;
+        font-size: 1.2rem;
+        line-height: 1;
+    }
+
+    /* Кнопки */
+    .admission-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .admission-button {
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+
+    .admission-button:first-child {
+        background: var(--primary-color);
+        color: white;
+        border: 2px solid var(--primary-color);
+    }
+
+    .admission-button:last-child {
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        background: transparent;
+    }
+
+    /* Таймлайн */
+    .timeline {
+        position: relative;
+        padding-left: 2rem;
+        margin: 2rem 0;
+    }
+
+    .timeline:before {
+        content: '';
+        position: absolute;
+        left: 7px;
+        top: 0;
+        height: 100%;
+        width: 2px;
+        background: var(--primary-color);
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 2rem;
+        padding-left: 2rem;
+    }
+
+    .timeline-date {
+        font-weight: 500;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .timeline-item:before {
+        content: '';
+        position: absolute;
+        left: -8px;
+        top: 5px;
+        width: 16px;
+        height: 16px;
+        background: white;
+        border: 3px solid var(--primary-color);
+        border-radius: 50%;
+    }
+
+    /* Аккордеон */
+    .accordion-header {
+        padding: 1rem;
+        background: #f8f9fa;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .accordion-header:hover {
+        background: #e9ecef;
+    }
+
+    .accordion-content {
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .accordion-content p {
+        padding: 1rem;
+        margin: 0;
+    }
+
+    .accordion-header.active {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    @media (max-width: 768px) {
+        .admission-title {
+            font-size: 2rem;
+        }
+
+        .admission-card-content {
+            padding: 1.5rem;
+        }
+
+        .admission-table {
+            font-size: 0.9rem;
+        }
+
+        .timeline-item {
+            padding-left: 1.5rem;
+        }
+    }
+</style>
+     <style>
+        .structure-diagram {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .structure-image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .image-caption {
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .document-download {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .management-card {
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+
+            box-shadow: var(--box-shadow);
+        }
+
+        .management-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .management-table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .management-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .management-table th,
+        .management-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid var(--border-color);
+        }
+
+        .management-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .management-table tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .management-table tr:hover {
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+
+        .management-table p {
+            margin: 0.25rem 0;
+        }
+
+        .accordion {
+            margin: 1.5rem 0;
+        }
+
+        .accordion-item {
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 1000px; /* Достаточно для контента */
+            padding: 1rem;
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+
+        .accordion-header h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .accordion-icon {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 1rem;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+
+        .accordion-icon::before,
+        .accordion-icon::after {
+            content: '';
+            position: absolute;
+            background-color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-icon::before {
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .accordion-icon::after {
+            width: 2px;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .accordion-item.active .accordion-icon::after {
+            transform: translateX(-50%) rotate(90deg);
+        }
+
+        .btn-sm {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .management-table th,
+            .management-table td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block extra_js %}
+ <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+
+        header.addEventListener('click', function () {
+            const wasActive = item.classList.contains('active');
+
+            // Закрыть все элементы
+            accordionItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    const otherContent = otherItem.querySelector('.accordion-content');
+                    otherContent.style.maxHeight = '0';
+                    otherContent.style.padding = '0 1rem';
+                }
+            });
+
+            // Открыть/закрыть текущий элемент
+            if (!wasActive) {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px'; // Устанавливаем точную высоту контента
+                content.style.padding = '1rem';
+            } else {
+                content.style.maxHeight = '0';
+                content.style.padding = '0 1rem';
+                setTimeout(() => {
+                    item.classList.remove('active');
+                }, 300); // Задержка для завершения анимации
+            }
+        });
+    });
+});
+    </script>
+{% endblock %}
