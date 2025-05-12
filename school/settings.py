@@ -48,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+"whitenoise.middleware.WhiteNoiseMiddleware",
+
 ]
 
 ROOT_URLCONF = 'school.urls'
@@ -114,11 +116,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Куда собираются статик-файлы
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
@@ -133,27 +134,17 @@ JAZZMIN_SETTINGS = {
     "welcome_sign": "Добро пожаловать в панель управления",
     "copyright": "© МОУ Размахнинская СОШ",
 
-
-
     "show_sidebar": True,
     "navigation_expanded": True,
 
     "hide_apps": [],  # Можно скрыть технические приложения
     "hide_models": [],
 
-
-
-
-
     # Цвета и стиль
     "theme": "journal",  # flatly, cyborg, darkly, journal, litera, etc.
     "site_logo": "images/logoW.png",  # Путь к логотипу (в static)
     "site_logo_classes": "{% static 'images/logoW.png' %}",  # Круглый логотип
 }
-
-
-
-
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'
