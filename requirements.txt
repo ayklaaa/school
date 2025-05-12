@@ -2,5 +2,5 @@ Django>=5.2
 gunicorn
 whitenoise
 psycopg2-binary
-jazzmin==2.5.0
+jazzmin==2.4.0
 
