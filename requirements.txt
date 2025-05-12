@@ -1,5 +1,5 @@
-Django
+Django>=5.2
 gunicorn
 whitenoise
 psycopg2-binary
-jazzmin
+jazzmin==2.6.0
