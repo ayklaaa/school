@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'www.apps.WwwConfig',
     'schedule', 'admin_panel'
-    'widget_tweaks',
+
 ]
 
 MIDDLEWARE = [
