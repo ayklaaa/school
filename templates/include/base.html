@@ -15,7 +15,7 @@
 </head>
 <body>
 <header>
-<div id="finevision_banner" onclick="finevision.activate_navbar()" style="cursor: pointer; z-index: 9999; background: rgb(255, 255, 255); border: 2px solid rgb(0, 0, 0); float: left; position: fixed; top: 0px; left: 0px; right: auto;"><img width="128" src="https://finevision.ru/static/banner1.jpg"><script src="https://finevision.ru/static/js/finevision_banner.js"></script></div>
+
 <div class="menu-overlay" id="menuOverlay" onclick="closeMenu(event)">
     <div class="menu-container" onclick="event.stopPropagation()">
         <button class="close-button" onclick="toggleMenu()">&times;</button>
@@ -238,10 +238,10 @@
 
 </script>
 
-<a href="#" onclick="UserWay.triggerOpenAccessibility(); return false;" class="accessibility-button">
+<a href="#" onclick="finevision.activate_navbar(); return false;" class="accessibility-button" style="cursor: pointer; z-index: 9999; background: rgb(255, 255, 255); border: 2px solid rgb(0, 0, 0); float: left; position: fixed; top: 0px; left: 0px; right: auto; padding: 5px 10px; text-decoration: none; color: black;">
     Версия для слабовидящих
 </a>
-
+<script src="https://finevision.ru/static/js/finevision_banner.js"></script>
 
 {% block extra_js %}{% endblock %}
 
