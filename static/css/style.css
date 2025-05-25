@@ -14,7 +14,8 @@
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
-
+#finevision_banner img{
+    display: none;}
 .accessibility-button:hover {
     background-color: #003f7f;
     color: white;
