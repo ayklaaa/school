@@ -61,3 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+    function toggleMobileNav() {
+        const nav = document.getElementById('mainNav');
+        nav.classList.toggle('show');
+    }
+
+
