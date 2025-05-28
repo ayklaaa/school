@@ -128,7 +128,7 @@
                 <span></span>
                 <span></span>
             </div>
-            <ul class="nav-menu"  id="mainNav>
+            <ul class="nav-menu">
                 <li><a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Главная</a></li>
                 <li><a href="{% url 'news' %}" class="{% if 'news' in request.path %}active{% endif %}">Новости</a></li>
                 <li><a href="{% url 'organization_info' %}" class="{% if 'organization_info' in request.path %}active{% endif %}">Сведения об образовательной организации</a></li>
