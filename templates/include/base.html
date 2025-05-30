@@ -16,105 +16,59 @@
 <body>
 <header>
 
-<div class="menu-overlay" id="menuOverlay" onclick="closeMenu(event)">
+<div class="container-1">
+  <div class="menu-overlay" id="menuOverlay" onclick="closeMenu(event)">
     <div class="menu-container" onclick="event.stopPropagation()">
-        <button class="close-button" onclick="toggleMenu()">&times;</button>
-{#        <ul>#}
-{##}
-{#                <li><a href="{% url 'news' %}" class="{% if 'news' in request.path %}active{% endif %}">Новости</a></li>#}
-{#                <li><a href="{% url 'info' %}" class="{% if 'info' in request.path %}active{% endif %}">Основные#}
-{#                    сведения</a></li>#}
-{##}
-{#                <li><a href="{% url 'home' %}" class="{% if 'home' in request.path %}active{% endif %}">Школьный#}
-{#                    спортивный клуб</a></li>#}
-{#                <li><a href="{% url 'contact' %}" class="{% if 'contact' in request.path %}active{% endif %}">Контакты</a>#}
-{#                </li>#}
-{#            <li><a href="#">Сведения об образовательной организации</a></li>#}
-{#            <li><a href="#">Организация питания в школе</a></li>#}
-{#            <li><a href="#">Помощь</a></li>#}
-{##}
-{#            <li><a href="#">Воспитательная работа</a></li>#}
-{#            <li><a href="#">Точка роста</a></li>#}
-{#            <li><a href="#">Набор в первый класс</a></li>#}
-{#            <li><a href="#">Наставничество</a></li>#}
-{#            <li><a href="#">Профориентация</a></li>#}
-{#            <li><a href="#">Независимая оценка качества образования</a></li>#}
-{##}
-{#            <li><a href="#">Локальные акты образовательной организации</a></li>#}
-{##}
-{##}
-{#        </ul>#}
-
-<div class="sidebar">
-    <ul>
-        <li onmouseover="showMenu('parents')">Родителям и ученикам</li>
-        <li onmouseover="showMenu('school')">Наша школа</li>
-{#        <li onmouseover="showMenu('teachers')">Педагогам и сотрудникам</li>#}
-
-{#        <li onmouseover="showMenu('tochka')">Точка роста</li>#}
-        <li onmouseover="showMenu('svedeniya')">Сведения об образовательной организации</li>
-
-        <a href="{% url 'contact' %}"><li>Контакты </a></li>
-        <a href="{% url 'food_monitoring' %}"><li>Мониторинг питания </a></li>
-        <a href="{% url 'quality_assessment' %}"><li>Независимая оценка качества образования</a></li>
-
-
-    </ul>
+      <button class="close-button" onclick="toggleMenu()">&times;</button>
+      <div class="sidebar">
+        <ul>
+          <li onclick="toggleSubmenu(this)">
+            Родителям и ученикам
+            <div class="submenu">
+              <a href="{% url 'first_grade_admission' %}">Набор в первый класс</a>
+              <a href="{% url 'news' %}">Новости</a>
+              <a href="{% url 'clubs_and_sections' %}">Секции и кружки</a>
+              <a href="{% url 'educational_work' %}">Воспитательная работа</a>
+            </div>
+          </li>
+          <li onclick="toggleSubmenu(this)">
+            Наша школа
+            <div class="submenu">
+              <a href="{% url 'info' %}">Основные сведения</a>
+              <a href="{% url 'class_list' %}">Расписание</a>
+              <a href="{% url 'staff' %}">Руководство</a>
+              <a href="{% url 'material_support' %}">Материально-техническое обеспечение</a>
+            </div>
+          </li>
+          <li onclick="toggleSubmenu(this)">
+            Сведения об образовательной организации
+            <div class="submenu">
+              <a href="{% url 'structure' %}">Структура и органы управления</a>
+              <a href="{% url 'education' %}">Образование</a>
+              <a href="{% url 'standart' %}">Образовательные стандарты</a>
+              <a href="{% url 'staff' %}">Руководство и педагогический состав</a>
+              <a href="{% url 'material_support' %}">Материально-техническое обеспечение</a>
+              <a href="{% url 'scholarships' %}">Стипендия и меры поддержки</a>
+              <a href="{% url 'paid_services' %}">Платные образовательные услуги</a>
+              <a href="{% url 'financial' %}">Финансовая-хозяйственная деятельность</a>
+              <a href="{% url 'vacant' %}">Вакантные места для приема</a>
+              <a href="{% url 'material_support' %}#dostyp">Доступная среда</a>
+              <a href="{% url 'international' %}">Международное сотрудничество</a>
+            </div>
+          </li>
+          <li><a href="{% url 'contact' %}">Контакты</a></li>
+          <li><a href="{% url 'food_monitoring' %}">Мониторинг питания</a></li>
+          <li><a href="{% url 'quality_assessment' %}">Независимая оценка качества</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="content-menu-r">
-    <div id="parents" class="submenu">
-        <h2>Родителям и ученикам</h2>
-        <a href="{% url 'first_grade_admission' %}">Набор в первый класс</a>
-        <a href="{% url 'news' %}">Новости</a>
-        <a href="{% url 'clubs_and_sections' %}">Секции и кружки</a>
-        <a href="{% url 'educational_work' %}">Воспитательная работа</a>
-    </div>
-
-    <div id="school" class="submenu">
-        <h2>Наша школа</h2>
-        <a href="{% url 'info' %}">Основные сведения</a>
-        <a href="{% url 'class_list' %}">Расписание</a>
-        <a href="{% url 'staff' %}">Руководство</a>
-        <a href="{% url 'material_support' %}">Материально-техническое обеспечение</a>
-    </div>
-
-    <div id="teachers" class="submenu">
-        <h2>Педагогам и сотрудникам</h2>
-        <a href="#">Методические рекомендации</a>
-        <a href="#">Повышение квалификации</a>
-        <a href="#">Вакансии</a>
-    </div>
 
 
 
-        <div id="tochka" class="submenu">
-        <h2>Точка роста</h2>
-        <a href="#">Общая информация о точке роста</a>
-        <a href="#">Педагоги</a>
-        <a href="#">Образовательные программы</a>
-        <a href="#">Документы</a>
-        <a href="#">Мероприятия</a>
-        <a href="#">Дополнительная информация</a>
-    </div>
-        <div id="svedeniya" class="submenu">
-        <h3>Сведения об образовательной организации</h3>
-        <a href="{% url 'structure' %}">Структура и органы управления</a>
-        <a href="{% url 'education' %}">Образование</a>
-        <a href="{% url 'standart' %}">Образовательные стандарты</a>
-        <a href="{% url 'staff' %}">Руководство и педагогический состав</a>
-        <a href="{% url 'material_support' %}">Материально-техническое обеспечение</a>
-        <a href="{% url 'scholarships' %}">Стипендия и меры поддержки</a>
-        <a href="{% url 'paid_services' %}">Платные образовательные услуги</a>
-        <a href="{% url 'financial' %}">Финансовая-хозяйственная деятельность</a>
-        <a href="{% url 'vacant' %}">Вакантные места для приема</a>
-        <a href="{% url 'material_support' %}#dostyp">Доступная среда</a>
-        <a href="{% url 'international' %}">Международное сотрудничество</a>
-    </div>
 
-</div>
-    </div>
-</div>
     <div class="container">
         <div class="logo">
             <a href="{% url 'home' %}">
