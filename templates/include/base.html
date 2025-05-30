@@ -189,7 +189,14 @@
         // Показываем нужное подменю
         document.getElementById(menuId).classList.add('active');
     }
-
+function toggleSubmenu(element) {
+  // Закрыть другие
+  document.querySelectorAll('.sidebar li.active').forEach(li => {
+    if (li !== element) li.classList.remove('active');
+  });
+  // Переключить текущее
+  element.classList.toggle('active');
+}
 </script>
 
 <a href="#" onclick="finevision.activate_navbar(); return false;" class="accessibility-button">
