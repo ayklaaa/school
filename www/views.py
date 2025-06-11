@@ -30,7 +30,7 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Your message has been sent. Thank you!')
+            messages.success(request, 'Ваше обращение отправленно. Спасибо!')
             return redirect('contact')
     else:
         form = ContactForm()
