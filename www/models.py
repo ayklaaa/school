@@ -108,7 +108,7 @@ class Document(models.Model):
         ('policy', 'Школьная политика'),
         ('form', 'Учителям'),
         ('curriculum', 'Учебный план'),
-        ('newsletter', 'Newsletters'),
+        ('newsletter', 'Информационные бюллетени'),
         ('other', 'Другое'),
     ]
 
