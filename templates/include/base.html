@@ -204,6 +204,9 @@ function toggleSubmenu(element) {
 </a>
 <script src="https://finevision.ru/static/js/finevision_banner.js"></script> -->
 <!-- Баннер для слабовидящих (фиксированный справа) -->
+
+{% block extra_js %}{% endblock %}
+
 <div id="finevision_banner" onclick="finevision.activate_navbar()" style="cursor: pointer; z-index: 9999; background: rgb(255, 255, 255); border: 2px solid rgb(0, 0, 0); float: right; position: fixed; top: 0px; left: auto; right: 0px;">
     <img width="70" src="https://finevision.ru/static/banner3.jpg">
 </div>
@@ -215,9 +218,6 @@ function toggleSubmenu(element) {
 
 <!-- Единый скрипт (подключен один раз в конце) -->
 <script src="https://finevision.ru/static/js/finevision_banner.min.js"></script>
-{% block extra_js %}{% endblock %}
-
-
 
 </body>
 </html>
