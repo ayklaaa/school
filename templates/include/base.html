@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     {% block extra_css %}{% endblock %}
-
+<script src="https://lidrekon.ru/slep/js/jquery.js"></script>
+<script src="https://lidrekon.ru/slep/js/uhpv-full.min-1251.js"></script>
 
 </head>
 <body>
@@ -203,6 +204,10 @@ function toggleSubmenu(element) {
     Версия для слабовидящих
 </a>
 <script src="http://finevision.ru/static/js/finevision_banner.js"></script>
+
+<img id="specialButton" style="cursor:pointer;" src="https://lidrekon.ru/images/special.png" alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" />
+
+    
 <!-- Баннер для слабовидящих (фиксированный справа)
 
 {% block extra_js %}{% endblock %}
