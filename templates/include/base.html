@@ -1,12 +1,12 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Размахнинская СОШ{% endblock %}</title>
-    
-    <!-- Favicon -->
-    {% load static %}
+        {% load static %}
     <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
     <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
     <!-- Для современных браузеров -->
@@ -14,12 +14,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/logo.png' %}">
     <!-- Для Apple устройств -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/logo.png' %}">
-    
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     {% block extra_css %}{% endblock %}
-    <script src="https://lidrekon.ru/slep/js/jquery.js"></script>
-    <script src="https://lidrekon.ru/slep/js/uhpv-full.min.js"></script>
+
+
 </head>
 <body>
 <header>
@@ -205,104 +204,18 @@ function toggleSubmenu(element) {
   // Переключить текущее
   element.classList.toggle('active');
 }
+
 </script>
 
-<!-- <a href="#" onclick="finevision.activate_navbar(); return false;" class="accessibility-button">
-    Версия для слабовидящих
-</a>
-<script src="http://finevision.ru/static/js/finevision_banner.js"></script> -->
 
+
+{% block extra_js %}{% endblock %}
 <a href="#" id="specialButton" class="accessibility-button" title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ">
   Версия для слабовидящих
 </a>
 
-
-    
-<!-- Баннер для слабовидящих (фиксированный справа)
-
-{% block extra_js %}{% endblock %}
-
-<!-- <!-- Баннер и кнопка доступности -->
-<!-- <div id="finevision_banner" style="cursor: pointer; z-index: 9999; background: #fff; border: 2px solid #000; position: fixed; top: 0; right: 0;">
-    <img width="70" src="https://finevision.ru/static/banner3.jpg" alt="Версия для слабовидящих">
-</div>
-
-<a href="#" id="accessibility-link" class="accessibility-button">
-    Версия для слабовидящих
-</a>
-
-<script>
-// Функция для проверки и инициализации FineVision
-function initAccessibility() {
-    // Проверяем, загрузился ли скрипт FineVision
-    if (typeof finevision !== 'undefined' && typeof finevision.activate_navbar === 'function') {
-        // Вешаем обработчики
-        document.getElementById('finevision_banner').onclick = function() {
-            finevision.activate_navbar();
-        };
-        
-        document.getElementById('accessibility-link').onclick = function(e) {
-            e.preventDefault();
-            finevision.activate_navbar();
-        };
-    } else {
-        // Альтернативная реализация, если FineVision не загрузился
-        console.warn('FineVision не загрузился, используем резервный вариант');
-        
-        function toggleAccessibility() {
-            document.body.classList.toggle('accessibility-mode');
-            alert('Режим для слабовидящих ' + 
-                 (document.body.classList.contains('accessibility-mode') ? 'включен' : 'выключен'));
-        }
-        
-        document.getElementById('finevision_banner').onclick = toggleAccessibility;
-        document.getElementById('accessibility-link').onclick = function(e) {
-            e.preventDefault();
-            toggleAccessibility();
-        };
-    }
-}
-
-// Подключаем скрипт FineVision с обработкой ошибок
-function loadFineVision() {
-    var script = document.createElement('script');
-    script.src = 'https://finevision.ru/static/js/finevision_banner.min.js';
-    script.onload = initAccessibility;
-    script.onerror = function() {
-        console.error('Не удалось загрузить FineVision');
-        initAccessibility(); // Все равно инициализируем резервный вариант
-    };
-    document.body.appendChild(script);
-}
-
-// Загружаем скрипт после полной загрузки страницы
-window.addEventListener('DOMContentLoaded', loadFineVision);
-</script>
-
-<style>
-/* Стили для резервного режима доступности */
-.accessibility-mode {
-    font-size: 18px !important;
-    line-height: 1.6 !important;
-    color: #000 !important;
-    background: #fff !important;
-}
-.accessibility-mode a {
-    color: #0066CC !important;
-    text-decoration: underline !important;
-}
-.accessibility-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 15px;
-    background: #2c3e50;
-    color: white;
-    border-radius: 5px;
-    z-index: 9999;
-}
-</style>  -->
-
+    <script src="https://lidrekon.ru/slep/js/jquery.js"></script>
+    <script src="https://lidrekon.ru/slep/js/uhpv-full.min.js"></script>
 
 </body>
 </html>
