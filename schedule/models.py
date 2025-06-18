@@ -31,10 +31,10 @@ class Class(models.Model):
         verbose_name_plural = 'Номер класса'
 
 class Lesson(models.Model):
-    class_name = models.ForeignKey(Class, on_delete=models.CASCADE)
-    teacher = models.ForeignKey('www.Teacher', on_delete=models.SET_NULL, null=True)
-    subject = models.ForeignKey('schedule.Subject', on_delete=models.SET_NULL, null=True)
-    day_of_week = models.CharField(max_length=10, choices=[
+    class_name = models.ForeignKey(Class, on_delete=models.CASCADE, verbose_name= 'Номер класса')
+    teacher = models.ForeignKey('www.Teacher', on_delete=models.SET_NULL, null=True, verbose_name= 'Преподаватель')
+    subject = models.ForeignKey('schedule.Subject', on_delete=models.SET_NULL, null=True, verbose_name= 'Предмет')
+    day_of_week = models.CharField(verbose_name='День недели', max_length=10, choices=[
         ('Monday', 'Понедельник'),
         ('Tuesday', 'Вторник'),
         ('Wednesday', 'Среда'),
@@ -42,7 +42,7 @@ class Lesson(models.Model):
         ('Friday', 'Пятница'),
         ('Saturday', 'Суббота'),
     ])
-    lesson_number = models.IntegerField()  # Номер урока (1, 2, 3, ...)
+    lesson_number = models.IntegerField(verbose_name= 'Номер урока')  # Номер урока (1, 2, 3, ...)
 
     def clean(self):
         # Проверка на повторение уроков у одного класса в один день
