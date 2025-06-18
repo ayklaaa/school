@@ -12,6 +12,11 @@
     {% block extra_css %}{% endblock %}
 <script src="https://lidrekon.ru/slep/js/jquery.js"></script>
 <script src="https://lidrekon.ru/slep/js/uhpv-full.min.js"></script>
+    <!-- Favicon для разных устройств -->
+<link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+<link rel="manifest" href="{% static 'images/site.webmanifest' %}">
 </head>
 <body>
 <header>
