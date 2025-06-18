@@ -16,7 +16,7 @@
     {% for day in day_list %}
     <div class="section">
         <div class="section-header">
-            <span class="section-badge">{{ day.grouper }}</span>
+            <span class="section-badge">{{ day.list.0.get_day_of_week_display }}</span>
         </div>
         <div class="admission-card">
             <div class="admission-card-content">
