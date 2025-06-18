@@ -198,12 +198,19 @@ function toggleSubmenu(element) {
   element.classList.toggle('active');
 }
 </script>
+<div id="finevision_banner" 
+     onclick="finevision.activate_navbar()" 
+     style="cursor: pointer; z-index: 9999; background: rgb(255, 255, 255); border: 2px solid rgb(0, 0, 0); float: right; position: fixed; top: 0px;">
+    <img width="128" src="https://finevision.ru/static/banner1.jpg">
+</div>
 
-<a href="#" onclick="finevision.activate_navbar(); return false;" class="accessibility-button">
+<!-- Обновлённая ссылка на скрипт -->
+<script src="https://finevision.ru/static/js/finevision_banner.min.js"></script>
+<!-- <a href="#" onclick="finevision.activate_navbar(); return false;" class="accessibility-button">
     Версия для слабовидящих
 </a>
 <script src="https://finevision.ru/static/js/finevision_banner.min.js"></script>
-
+ -->
 {% block extra_js %}{% endblock %}
 
 
