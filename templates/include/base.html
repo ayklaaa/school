@@ -207,17 +207,87 @@ function toggleSubmenu(element) {
 
 {% block extra_js %}{% endblock %}
 
-<div id="finevision_banner" onclick="finevision.activate_navbar()" style="cursor: pointer; z-index: 9999; background: rgb(255, 255, 255); border: 2px solid rgb(0, 0, 0); float: right; position: fixed; top: 0px; left: auto; right: 0px;">
-    <img width="70" src="https://finevision.ru/static/banner3.jpg">
+<!-- Баннер и кнопка доступности -->
+<div id="finevision_banner" style="cursor: pointer; z-index: 9999; background: #fff; border: 2px solid #000; position: fixed; top: 0; right: 0;">
+    <img width="70" src="https://finevision.ru/static/banner3.jpg" alt="Версия для слабовидящих">
 </div>
 
-<!-- Ссылка "Версия для слабовидящих" -->
-<a href="#" onclick="finevision.activate_navbar(); return false;" class="accessibility-button">
+<a href="#" id="accessibility-link" class="accessibility-button">
     Версия для слабовидящих
 </a>
 
-<!-- Единый скрипт (подключен один раз в конце) -->
-<script src="https://finevision.ru/static/js/finevision_banner.min.js"></script>
+<script>
+// Функция для проверки и инициализации FineVision
+function initAccessibility() {
+    // Проверяем, загрузился ли скрипт FineVision
+    if (typeof finevision !== 'undefined' && typeof finevision.activate_navbar === 'function') {
+        // Вешаем обработчики
+        document.getElementById('finevision_banner').onclick = function() {
+            finevision.activate_navbar();
+        };
+        
+        document.getElementById('accessibility-link').onclick = function(e) {
+            e.preventDefault();
+            finevision.activate_navbar();
+        };
+    } else {
+        // Альтернативная реализация, если FineVision не загрузился
+        console.warn('FineVision не загрузился, используем резервный вариант');
+        
+        function toggleAccessibility() {
+            document.body.classList.toggle('accessibility-mode');
+            alert('Режим для слабовидящих ' + 
+                 (document.body.classList.contains('accessibility-mode') ? 'включен' : 'выключен'));
+        }
+        
+        document.getElementById('finevision_banner').onclick = toggleAccessibility;
+        document.getElementById('accessibility-link').onclick = function(e) {
+            e.preventDefault();
+            toggleAccessibility();
+        };
+    }
+}
+
+// Подключаем скрипт FineVision с обработкой ошибок
+function loadFineVision() {
+    var script = document.createElement('script');
+    script.src = 'https://finevision.ru/static/js/finevision_banner.min.js';
+    script.onload = initAccessibility;
+    script.onerror = function() {
+        console.error('Не удалось загрузить FineVision');
+        initAccessibility(); // Все равно инициализируем резервный вариант
+    };
+    document.body.appendChild(script);
+}
+
+// Загружаем скрипт после полной загрузки страницы
+window.addEventListener('DOMContentLoaded', loadFineVision);
+</script>
+
+<style>
+/* Стили для резервного режима доступности */
+.accessibility-mode {
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+    color: #000 !important;
+    background: #fff !important;
+}
+.accessibility-mode a {
+    color: #0066CC !important;
+    text-decoration: underline !important;
+}
+.accessibility-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background: #2c3e50;
+    color: white;
+    border-radius: 5px;
+    z-index: 9999;
+}
+</style>
+Почему это
 
 </body>
 </html>
